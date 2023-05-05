@@ -13,8 +13,11 @@ The main **Kork** API is shown here:
 
   CodeChain
   AstPrinter
-  AbstractRetriever
-  SimpleRetriever
+  AbstractContextRetriever
+  SimpleContextRetriever
+  AbstractExampleRetriever
+  SimpleExampleRetriever
+
 
 
 Kork Interpreter 
@@ -25,6 +28,7 @@ Kork Interpreter
   InterpreterResult
   run_interpreter
   Environment
+  KorkException
 
 
 Index
