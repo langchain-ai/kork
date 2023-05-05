@@ -91,6 +91,7 @@ retrievers
 ```{toctree}
 :caption: Examples
 calculator
+query_analyzer
 ```
 
 ```{toctree}
