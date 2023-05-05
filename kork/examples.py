@@ -5,6 +5,7 @@ from typing import Any, Callable, List, Literal, Sequence, Tuple, Union
 from kork import ast
 from kork.ast_printer import AbstractAstPrinter
 from kork.foreign_funcs import to_kork_function_call
+from kork.utils import wrap_in_tag
 
 
 def _add_result_variable(expr: ast.Expr) -> ast.Program:
@@ -79,7 +80,7 @@ def format_examples(
         formatted_examples.append(
             (
                 formatted_input,
-                f"```{language_name}\n{ast_printer.visit(desired_output)}\n```",
+                wrap_in_tag("code", ast_printer.visit(desired_output)),
             )
         )
 
