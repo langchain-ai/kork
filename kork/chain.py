@@ -37,7 +37,7 @@ from kork.exceptions import LLMParseException
 from kork.interpreter import InterpreterResult, run_interpreter
 from kork.prompt_adapter import FewShotTemplate
 from kork.retrieval import AbstractContextRetriever, FuncLike, SimpleContextRetriever
-from kork.utils import unwrap_code
+from kork.utils import unwrap_tag
 
 _INSTRUCTION_PROMPT = """\
 You are programming in a language called "{language_name}".
@@ -51,18 +51,17 @@ program.
 
 Do not assume that any other functions except for the ones listed above exist.
 
-Wrap the program in ```{language_name} and ``` to indicate the start and end of
-the program.
+Wrap the program in <code> and </code> tags.
 
 Store the solution to the query in a variable called "result".
 
 Here is a sample valid program:
 
-```{language_name}
+<code>
 var x = 1 # Assign 1 to the variable x
 var result = 1 + 2 # Calculate the sum of 1 + 2 and assign to result
 var result = x # Assign the value of x to result
-```
+</code>
 
 Guidelines:
 - Do not use operators, instead invoke appropriate external functions.
@@ -184,7 +183,7 @@ class CodeChain(Chain):
         if external_functions:
             external_functions_block = (
                 "You have access to the following external functions:\n\n"
-                f"```{self.language_name}\n\n"
+                f"```{self.language_name}\n"
                 f"{external_functions}\n"
                 "```\n"
             )
@@ -220,7 +219,7 @@ class CodeChain(Chain):
 
         formatted_query = format_text(query, self.input_formatter)
         llm_output = cast(str, chain.predict_and_parse(query=formatted_query))
-        code = unwrap_code(self.language_name, llm_output)
+        code = unwrap_tag("code", llm_output)
 
         if not code:
             return {

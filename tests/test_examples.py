@@ -25,6 +25,6 @@ def test_format_examples() -> None:
     assert formatted_examples == [
         (
             "Add 1 and 2",
-            "```meow\nvar result = add_(1, 2)\n```",
+            "<code>var result = add_(1, 2)</code>",
         ),
     ]
