@@ -1,4 +1,4 @@
-# Introduction 
+# Introduction
 
 `Kork` is an *experimental* [Langchain chain](https://python.langchain.com/en/latest/modules/chains.html) that can write and execute code safely.
 
