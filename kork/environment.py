@@ -3,12 +3,10 @@ from __future__ import annotations
 import copy
 import dataclasses
 from dataclasses import field
-from typing import Dict, List, Optional, Sequence, Union
+from typing import Any, Dict, List, Mapping, Optional, Sequence
 
 from kork import ast
 from kork.exceptions import KorkRunTimeException
-
-SymbolValue = Union[float, int, str, list, ast.FunctionDef, ast.ExternFunctionDef]
 
 
 @dataclasses.dataclass
@@ -16,9 +14,9 @@ class Environment:
     """Environment for storing variables and function definitions."""
 
     parent: Optional[Environment] = None
-    variables: Dict[str, SymbolValue] = field(default_factory=dict)
+    variables: Dict[str, Any] = field(default_factory=dict)
 
-    def get_symbol(self, name: str) -> SymbolValue:
+    def get_symbol(self, name: str) -> Any:
         """Get a symbol from the environment.
 
         Args:
@@ -34,7 +32,7 @@ class Environment:
         else:
             raise KorkRunTimeException(f"Variable `{name}` not found")
 
-    def set_symbol(self, name: str, value: SymbolValue) -> SymbolValue:
+    def set_symbol(self, name: str, value: Any) -> Any:
         """Set a symbol in the environment."""
         # TODO: We need to determine whether want the variable to be
         #       declared prior to be being set.
@@ -69,10 +67,15 @@ class Environment:
 
 def create_environment(
     extern_function_defs: Sequence[ast.ExternFunctionDef],
+    external_variables: Optional[Mapping[str, Any]] = None,
 ) -> Environment:
     """Create a new environment with pre-populated state."""
-    variables: Dict[str, SymbolValue] = {
-        func.name: func for func in extern_function_defs
-    }
+    variables: Dict[str, Any] = {func.name: func for func in extern_function_defs}
     environment = Environment(parent=None, variables=variables)
+
+    if external_variables:
+        for name, value in external_variables.items():
+            # At the moment, let's not clone the variable so that it can be
+            # mutated if the goal is to do mutation.
+            environment.set_symbol(name, value)
     return environment
