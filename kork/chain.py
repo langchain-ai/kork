@@ -2,9 +2,11 @@
 from __future__ import annotations
 
 from typing import (
+    Any,
     Callable,
     Dict,
     List,
+    Mapping,
     Optional,
     Sequence,
     Tuple,
@@ -145,11 +147,14 @@ class CodeChain(Chain):
         """
         return ["raw", "errors", "code", "environment"]
 
-    def prepare_context(self, query: str) -> Tuple[Environment, FewShotTemplate]:
+    def prepare_context(
+        self, query: str, variables: Optional[Mapping[str, Any]] = None
+    ) -> Tuple[Environment, FewShotTemplate]:
         """Get the pre-populated environment and the few shot template.
 
         Args:
             query: The query to prepare the context for.
+            variables: Any variables that should be added to the context.
 
         Returns:
             The prepopulated environment and a pre-formatted few shot template.
@@ -159,7 +164,7 @@ class CodeChain(Chain):
         else:
             external_function_definitions = []
 
-        environment = create_environment(external_function_definitions)
+        environment = create_environment(external_function_definitions, variables)
 
         if self.example_retriever:
             formatted_examples = self.example_retriever.retrieve(query)
@@ -210,7 +215,16 @@ class CodeChain(Chain):
         # to make things a bit more robust.
         query = inputs[self.input_key].strip()
 
-        environment, few_shot_template = self.prepare_context(query)
+        variables: Mapping[str, Any] = cast(
+            Mapping[str, Any], inputs.get("variables", {})
+        )
+
+        if not isinstance(variables, dict):
+            raise TypeError(
+                f"Variables must be a dictionary, got {type(variables)} instead."
+            )
+
+        environment, few_shot_template = self.prepare_context(query, variables)
 
         chain = LLMChain(
             prompt=few_shot_template,
