@@ -61,7 +61,7 @@ def as_html_dict(
     if pretty_print:
         try:
             code = AstPrinter().visit(parse(code), pretty_print=True)
-        except Exception as e:
+        except Exception:
             # This is display code. Broad exception handling OK for now
             # we can make the code more robust later.
             code = code
