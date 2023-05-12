@@ -15,7 +15,7 @@
 
 [Image manipulation API using PIL](https://langchain-ai.github.io/kork/examples/image_manipulation.html)
 
-![alt Example Cats](assets/cats.png)
+<img src="assets/cats.png" alt="Cats!!!" style="max-width: 500px;">
 
 ## How
 
