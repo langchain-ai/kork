@@ -1,0 +1,486 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kork.ast_printer &#8212; Kork 0.0.2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kork/ast_printer';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/parrot.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/parrot.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../language.html">The Language 😼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ast.html">Abstract Syntax Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../prompt.html">The Prompt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrievers.html">Retrievers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../calculator.html">Calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../query_analyzer.html">Query Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/image_manipulation.html">Image Manipulation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/langchain-ai/kork" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for kork.ast_printer</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">abc</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">from</span> <span class="nn">kork</span> <span class="kn">import</span> <span class="n">ast</span>
+
+
+<div class="viewcode-block" id="AbstractAstPrinter"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AbstractAstPrinter">[docs]</a><span class="k">class</span> <span class="nc">AbstractAstPrinter</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">Visitor</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">):</span>
+<div class="viewcode-block" id="AbstractAstPrinter.visit"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AbstractAstPrinter.visit">[docs]</a>    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">visit</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ast</span><span class="o">.</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">Expr</span><span class="p">],</span> <span class="n">pretty_print</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Entry-point for printing the AST.&quot;&quot;&quot;</span></div></div>
+
+
+<div class="viewcode-block" id="AstPrinter"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter">[docs]</a><span class="k">class</span> <span class="nc">AstPrinter</span><span class="p">(</span><span class="n">AbstractAstPrinter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Default AST Printer implementation.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AstPrinter.visit"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit">[docs]</a>    <span class="k">def</span> <span class="nf">visit</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ast</span><span class="o">.</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">Expr</span><span class="p">],</span> <span class="n">pretty_print</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Entry-point for printing the AST.&quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;call_depth&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;pretty_print&quot;</span><span class="p">:</span> <span class="n">pretty_print</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">element</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstPrinter.visit_program"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit_program">[docs]</a>    <span class="k">def</span> <span class="nf">visit_program</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">program</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">Program</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print a program.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stmt</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span> <span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="n">program</span><span class="o">.</span><span class="n">stmts</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstPrinter.visit_extern_function_def"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit_extern_function_def">[docs]</a>    <span class="k">def</span> <span class="nf">visit_extern_function_def</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">extern_function_def</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">ExternFunctionDef</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print an extern function definition.&quot;&quot;&quot;</span>
+        <span class="n">code</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="sa">f</span><span class="s2">&quot;extern fn </span><span class="si">{</span><span class="n">extern_function_def</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;(&quot;</span><span class="p">,</span>
+            <span class="n">extern_function_def</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">),</span>
+            <span class="s2">&quot;)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot; -&gt; &quot;</span><span class="p">,</span>
+            <span class="n">extern_function_def</span><span class="o">.</span><span class="n">return_type</span><span class="p">,</span>
+        <span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">extern_function_def</span><span class="o">.</span><span class="n">doc_string</span><span class="p">:</span>
+            <span class="c1"># TODO: This is hacky for prototyping, will need to have a better</span>
+            <span class="c1"># way to represent the doc string.</span>
+            <span class="n">doc_string</span> <span class="o">=</span> <span class="n">extern_function_def</span><span class="o">.</span><span class="n">doc_string</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">code</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; // </span><span class="si">{</span><span class="n">doc_string</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">code</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstPrinter.visit_function_call"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit_function_call">[docs]</a>    <span class="k">def</span> <span class="nf">visit_function_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">FunctionCall</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print a function call.&quot;&quot;&quot;</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;call_depth&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;pretty_print&quot;</span><span class="p">]:</span>
+            <span class="n">call_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">(</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="n">call_str</span> <span class="o">+=</span> <span class="s2">&quot;,</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="s2">&quot;    &quot;</span> <span class="o">*</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;call_depth&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">arg</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">call</span><span class="o">.</span><span class="n">args</span>
+            <span class="p">)</span>
+            <span class="n">call_str</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;    &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;call_depth&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">call_str</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">(&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">arg</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">arg</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">call</span><span class="o">.</span><span class="n">args</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;)&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">call_str</span></div>
+
+<div class="viewcode-block" id="AstPrinter.visit_function_def"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit_function_def">[docs]</a>    <span class="k">def</span> <span class="nf">visit_function_def</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">function_def</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">FunctionDef</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print a function definition.&quot;&quot;&quot;</span>
+        <span class="n">signature</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="sa">f</span><span class="s2">&quot;fn </span><span class="si">{</span><span class="n">function_def</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;(&quot;</span><span class="p">,</span>
+            <span class="n">function_def</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">),</span>
+            <span class="s2">&quot;)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot; -&gt; &quot;</span><span class="p">,</span>
+            <span class="n">function_def</span><span class="o">.</span><span class="n">return_type</span><span class="p">,</span>
+        <span class="p">]</span>
+
+        <span class="n">code</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot; {&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="n">function_def</span><span class="o">.</span><span class="n">body</span><span class="p">:</span>
+            <span class="n">code</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stmt</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">))</span>
+        <span class="n">code</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">signature</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">code</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstPrinter.visit_variable"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit_variable">[docs]</a>    <span class="k">def</span> <span class="nf">visit_variable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">Variable</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print a variable.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">variable</span><span class="o">.</span><span class="n">name</span></div>
+
+<div class="viewcode-block" id="AstPrinter.visit_var_decl"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit_var_decl">[docs]</a>    <span class="k">def</span> <span class="nf">visit_var_decl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var_decl</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">VarDecl</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print a variable declaration.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;var </span><span class="si">{</span><span class="n">var_decl</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">var_decl</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+<div class="viewcode-block" id="AstPrinter.visit_assign"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit_assign">[docs]</a>    <span class="k">def</span> <span class="nf">visit_assign</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">assign</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">Assign</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print an assignment.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">assign</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">assign</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+<div class="viewcode-block" id="AstPrinter.visit_literal"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit_literal">[docs]</a>    <span class="k">def</span> <span class="nf">visit_literal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">literal</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">Literal</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print a literal.&quot;&quot;&quot;</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">literal</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="s2">&quot;null&quot;</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown literal type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstPrinter.visit_param_list"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit_param_list">[docs]</a>    <span class="k">def</span> <span class="nf">visit_param_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param_list</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">ParamList</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print a parameter list.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">param_list</span><span class="o">.</span><span class="n">params</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstPrinter.visit_param"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit_param">[docs]</a>    <span class="k">def</span> <span class="nf">visit_param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">Param</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print a parameter.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">param</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">param</span><span class="o">.</span><span class="n">type_</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+<div class="viewcode-block" id="AstPrinter.visit_list_"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit_list_">[docs]</a>    <span class="k">def</span> <span class="nf">visit_list_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">List_</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print a list.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">list_</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span><span class="si">}</span><span class="s2">]&quot;</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstPrinter.visit_unary"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit_unary">[docs]</a>    <span class="k">def</span> <span class="nf">visit_unary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unary</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">Unary</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Visit a unary expression.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">unary</span><span class="o">.</span><span class="n">operator</span><span class="si">}{</span><span class="n">unary</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+<div class="viewcode-block" id="AstPrinter.visit_grouping"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit_grouping">[docs]</a>    <span class="k">def</span> <span class="nf">visit_grouping</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grouping</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">Grouping</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">grouping</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span></div>
+
+<div class="viewcode-block" id="AstPrinter.visit_binary"><a class="viewcode-back" href="../../generated/kork.html#kork.ast_printer.AstPrinter.visit_binary">[docs]</a>    <span class="k">def</span> <span class="nf">visit_binary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">binary</span><span class="p">:</span> <span class="n">ast</span><span class="o">.</span><span class="n">Binary</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Print a binary expression.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">binary</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">binary</span><span class="o">.</span><span class="n">operator</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">binary</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span></div></div>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Langchain AI
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, Langchain AI.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

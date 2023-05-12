@@ -1,0 +1,696 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kork.chain &#8212; Kork 0.0.2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kork/chain';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/parrot.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/parrot.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../language.html">The Language 😼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ast.html">Abstract Syntax Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../prompt.html">The Prompt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrievers.html">Retrievers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../calculator.html">Calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../query_analyzer.html">Query Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/image_manipulation.html">Image Manipulation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/langchain-ai/kork" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for kork.chain</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Implementation of a programming chain.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Any</span><span class="p">,</span>
+    <span class="n">Callable</span><span class="p">,</span>
+    <span class="n">Dict</span><span class="p">,</span>
+    <span class="n">List</span><span class="p">,</span>
+    <span class="n">Mapping</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">,</span>
+    <span class="n">Sequence</span><span class="p">,</span>
+    <span class="n">Tuple</span><span class="p">,</span>
+    <span class="n">TypedDict</span><span class="p">,</span>
+    <span class="n">Union</span><span class="p">,</span>
+    <span class="n">cast</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">langchain</span> <span class="kn">import</span> <span class="n">LLMChain</span>
+<span class="kn">from</span> <span class="nn">langchain.chains.base</span> <span class="kn">import</span> <span class="n">Chain</span>
+<span class="kn">from</span> <span class="nn">langchain.prompts</span> <span class="kn">import</span> <span class="n">PromptTemplate</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">langchain.base_language</span> <span class="kn">import</span> <span class="n">BaseLanguageModel</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">langchain.schema</span> <span class="kn">import</span> <span class="n">BaseLanguageModel</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Extra</span>
+
+<span class="kn">from</span> <span class="nn">kork</span> <span class="kn">import</span> <span class="n">ast</span>
+<span class="kn">from</span> <span class="nn">kork.ast_printer</span> <span class="kn">import</span> <span class="n">AbstractAstPrinter</span><span class="p">,</span> <span class="n">AstPrinter</span>
+<span class="kn">from</span> <span class="nn">kork.environment</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">create_environment</span>
+<span class="kn">from</span> <span class="nn">kork.examples</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AbstractExampleRetriever</span><span class="p">,</span>
+    <span class="n">InputFormatter</span><span class="p">,</span>
+    <span class="n">SimpleExampleRetriever</span><span class="p">,</span>
+    <span class="n">format_examples</span><span class="p">,</span>
+    <span class="n">format_text</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">kork.exceptions</span> <span class="kn">import</span> <span class="n">LLMParseException</span>
+<span class="kn">from</span> <span class="nn">kork.interpreter</span> <span class="kn">import</span> <span class="n">InterpreterResult</span><span class="p">,</span> <span class="n">run_interpreter</span>
+<span class="kn">from</span> <span class="nn">kork.prompt_adapter</span> <span class="kn">import</span> <span class="n">FewShotTemplate</span>
+<span class="kn">from</span> <span class="nn">kork.retrieval</span> <span class="kn">import</span> <span class="n">AbstractContextRetriever</span><span class="p">,</span> <span class="n">FuncLike</span><span class="p">,</span> <span class="n">SimpleContextRetriever</span>
+<span class="kn">from</span> <span class="nn">kork.utils</span> <span class="kn">import</span> <span class="n">unwrap_tag</span>
+
+<span class="n">_INSTRUCTION_PROMPT</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">You are programming in a language called &quot;</span><span class="si">{language_name}</span><span class="s2">&quot;.</span>
+
+<span class="s2">You are an expert programmer and must follow the instructions below exactly.</span>
+
+<span class="s2">Your goal is to translate a user query into a corresponding and valid </span><span class="si">{language_name}</span>
+<span class="s2">program.</span>
+
+<span class="si">{external_functions_block}</span>
+
+<span class="s2">Do not assume that any other functions except for the ones listed above exist.</span>
+
+<span class="s2">Wrap the program in &lt;code&gt; and &lt;/code&gt; tags.</span>
+
+<span class="s2">Store the solution to the query in a variable called &quot;result&quot;.</span>
+
+<span class="s2">Here is a sample valid program:</span>
+
+<span class="s2">&lt;code&gt;</span>
+<span class="s2">var x = 1 # Assign 1 to the variable x</span>
+<span class="s2">var result = 1 + 2 # Calculate the sum of 1 + 2 and assign to result</span>
+<span class="s2">var result = x # Assign the value of x to result</span>
+<span class="s2">&lt;/code&gt;</span>
+
+<span class="s2">Guidelines:</span>
+<span class="s2">- Do not use operators, instead invoke appropriate external functions.</span>
+<span class="s2">- Do not declare functions, do not use loops, do not use conditionals.</span>
+<span class="s2">- Solve the problem only using variable declarations and function invocations.</span>
+
+<span class="s2">Begin!</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+
+<span class="c1"># PUBLIC API</span>
+
+
+<span class="n">DEFAULT_INSTRUCTION_PROMPT</span> <span class="o">=</span> <span class="n">PromptTemplate</span><span class="p">(</span>
+    <span class="n">input_variables</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;language_name&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;external_functions_block&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">template</span><span class="o">=</span><span class="n">_INSTRUCTION_PROMPT</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="CodeResult"><a class="viewcode-back" href="../../generated/kork.html#kork.chain.CodeResult">[docs]</a><span class="k">class</span> <span class="nc">CodeResult</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Result of a code chain.&quot;&quot;&quot;</span>
+
+    <span class="n">errors</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="ne">Exception</span><span class="p">]</span>
+    <span class="n">raw</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">code</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">environment</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Environment</span><span class="p">]</span>  <span class="c1"># Returned on success</span></div>
+
+
+<span class="c1"># PUBLIC API</span>
+
+<span class="n">ExampleTuple</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">Program</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="CodeChain"><a class="viewcode-back" href="../../generated/kork.html#kork.chain.CodeChain">[docs]</a><span class="k">class</span> <span class="nc">CodeChain</span><span class="p">(</span><span class="n">Chain</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A coding chain.&quot;&quot;&quot;</span>
+
+    <span class="n">llm</span><span class="p">:</span> <span class="n">BaseLanguageModel</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The language model to use for the coding chain.&quot;&quot;&quot;</span>
+    <span class="n">interpreter</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Environment</span><span class="p">],</span> <span class="n">InterpreterResult</span><span class="p">]</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The interpreter to use for the coding chain.&quot;&quot;&quot;</span>
+    <span class="n">ast_printer</span><span class="p">:</span> <span class="n">AbstractAstPrinter</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The AST printer to use for the coding chain.&quot;&quot;&quot;</span>
+    <span class="n">context_retriever</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AbstractContextRetriever</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Context to inject into the environment and prompt.</span>
+<span class="sd">    </span>
+<span class="sd">    At the moment, this context is limited to external functions.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">example_retriever</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AbstractExampleRetriever</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Examples that should be added to the prompt.&quot;&quot;&quot;</span>
+    <span class="n">instruction_template</span><span class="p">:</span> <span class="n">PromptTemplate</span> <span class="o">=</span> <span class="n">DEFAULT_INSTRUCTION_PROMPT</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Template for the instruction prompt.&quot;&quot;&quot;</span>
+    <span class="n">input_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;query&quot;</span>
+    <span class="c1"># Smirking kat language</span>
+    <span class="n">language_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;😼&quot;</span>
+    <span class="n">input_formatter</span><span class="p">:</span> <span class="n">InputFormatter</span> <span class="o">=</span> <span class="s2">&quot;triple_quotes&quot;</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The smirking kat programming language; aka Kork; aka 😼&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CodeChain.Config"><a class="viewcode-back" href="../../generated/kork.html#kork.chain.CodeChain.Config">[docs]</a>    <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Configuration for this pydantic object.&quot;&quot;&quot;</span>
+
+        <span class="n">extra</span> <span class="o">=</span> <span class="n">Extra</span><span class="o">.</span><span class="n">allow</span>
+        <span class="n">arbitrary_types_allowed</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">input_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Will be whatever keys the prompt expects.</span>
+
+<span class="sd">        :meta private:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">input_key</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">output_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Output keys to return.</span>
+
+<span class="sd">        :meta private:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;raw&quot;</span><span class="p">,</span> <span class="s2">&quot;errors&quot;</span><span class="p">,</span> <span class="s2">&quot;code&quot;</span><span class="p">,</span> <span class="s2">&quot;environment&quot;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="CodeChain.prepare_context"><a class="viewcode-back" href="../../generated/kork.html#kork.chain.CodeChain.prepare_context">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_context</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">variables</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Environment</span><span class="p">,</span> <span class="n">FewShotTemplate</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the pre-populated environment and the few shot template.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            query: The query to prepare the context for.</span>
+<span class="sd">            variables: Any variables that should be added to the context.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The prepopulated environment and a pre-formatted few shot template.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">context_retriever</span><span class="p">:</span>
+            <span class="n">external_function_definitions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">context_retriever</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">external_function_definitions</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">environment</span> <span class="o">=</span> <span class="n">create_environment</span><span class="p">(</span><span class="n">external_function_definitions</span><span class="p">,</span> <span class="n">variables</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">example_retriever</span><span class="p">:</span>
+            <span class="n">formatted_examples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">example_retriever</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">formatted_examples</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">external_functions</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ast_printer</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">func_declaration</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">func_declaration</span> <span class="ow">in</span> <span class="n">environment</span><span class="o">.</span><span class="n">list_external_functions</span><span class="p">()</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="n">input_variables</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">instruction_template</span><span class="o">.</span><span class="n">input_variables</span>
+
+        <span class="n">formatting_variables</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">if</span> <span class="s2">&quot;language_name&quot;</span> <span class="ow">in</span> <span class="n">input_variables</span><span class="p">:</span>
+            <span class="n">formatting_variables</span><span class="p">[</span><span class="s2">&quot;language_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">language_name</span>
+
+        <span class="k">if</span> <span class="n">external_functions</span><span class="p">:</span>
+            <span class="n">external_functions_block</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s2">&quot;You have access to the following external functions:</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;```</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">language_name</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">external_functions</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="s2">&quot;```</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">external_functions_block</span> <span class="o">=</span> <span class="s2">&quot;Do not assume any functions exist.</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+        <span class="k">if</span> <span class="s2">&quot;external_functions_block&quot;</span> <span class="ow">in</span> <span class="n">input_variables</span><span class="p">:</span>
+            <span class="n">formatting_variables</span><span class="p">[</span><span class="s2">&quot;external_functions_block&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">external_functions_block</span>
+
+        <span class="n">prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">instruction_template</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+            <span class="o">**</span><span class="n">formatting_variables</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">environment</span><span class="p">,</span> <span class="n">FewShotTemplate</span><span class="p">(</span>
+            <span class="n">instruction_template</span><span class="o">=</span><span class="n">prompt</span><span class="p">,</span>
+            <span class="n">examples</span><span class="o">=</span><span class="n">formatted_examples</span><span class="p">,</span>
+            <span class="n">input_variables</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">],</span>
+        <span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">CodeResult</span><span class="p">:</span>  <span class="c1"># type: ignore</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Call the chain.&quot;&quot;&quot;</span>
+        <span class="c1"># Note not using original query!!</span>
+        <span class="c1"># We remove the leading and trailing whitespace from the query</span>
+        <span class="c1"># to make things a bit more robust.</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">input_key</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="n">variables</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span>
+            <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;variables&quot;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Variables must be a dictionary, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span><span class="si">}</span><span class="s2"> instead.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">environment</span><span class="p">,</span> <span class="n">few_shot_template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_context</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">variables</span><span class="p">)</span>
+
+        <span class="n">chain</span> <span class="o">=</span> <span class="n">LLMChain</span><span class="p">(</span>
+            <span class="n">prompt</span><span class="o">=</span><span class="n">few_shot_template</span><span class="p">,</span>
+            <span class="n">llm</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">formatted_query</span> <span class="o">=</span> <span class="n">format_text</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_formatter</span><span class="p">)</span>
+        <span class="n">llm_output</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">chain</span><span class="o">.</span><span class="n">predict_and_parse</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="n">formatted_query</span><span class="p">))</span>
+        <span class="n">code</span> <span class="o">=</span> <span class="n">unwrap_tag</span><span class="p">(</span><span class="s2">&quot;code&quot;</span><span class="p">,</span> <span class="n">llm_output</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">code</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s2">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="n">LLMParseException</span><span class="p">(</span>
+                        <span class="s2">&quot;Could not find code block. Please make sure the code &quot;</span>
+                        <span class="s2">&quot;is wrapped in a code block.&quot;</span>
+                    <span class="p">)</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;raw&quot;</span><span class="p">:</span> <span class="n">llm_output</span><span class="p">,</span>
+                <span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;environment&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="p">}</span>
+
+        <span class="n">interpreter_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interpreter</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">environment</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">interpreter_result</span><span class="p">[</span><span class="s2">&quot;errors&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s2">&quot;errors&quot;</span><span class="p">:</span> <span class="n">interpreter_result</span><span class="p">[</span><span class="s2">&quot;errors&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;raw&quot;</span><span class="p">:</span> <span class="n">llm_output</span><span class="p">,</span>
+                <span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="n">code</span><span class="p">,</span>
+                <span class="s2">&quot;environment&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="p">}</span>
+
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;raw&quot;</span><span class="p">:</span> <span class="n">llm_output</span><span class="p">,</span>
+            <span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="n">code</span><span class="p">,</span>
+            <span class="s2">&quot;environment&quot;</span><span class="p">:</span> <span class="n">interpreter_result</span><span class="p">[</span><span class="s2">&quot;environment&quot;</span><span class="p">],</span>
+        <span class="p">}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_chain_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Used for serialization.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;code_chain&quot;</span>
+
+<div class="viewcode-block" id="CodeChain.from_defaults"><a class="viewcode-back" href="../../generated/kork.html#kork.chain.CodeChain.from_defaults">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_defaults</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">llm</span><span class="p">:</span> <span class="n">BaseLanguageModel</span><span class="p">,</span>
+        <span class="n">interpreter</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Environment</span><span class="p">],</span> <span class="n">InterpreterResult</span><span class="p">]</span> <span class="o">=</span> <span class="n">run_interpreter</span><span class="p">,</span>
+        <span class="n">ast_printer</span><span class="p">:</span> <span class="n">AbstractAstPrinter</span> <span class="o">=</span> <span class="n">AstPrinter</span><span class="p">(),</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">AbstractContextRetriever</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">FuncLike</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">examples</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">AbstractExampleRetriever</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ExampleTuple</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">instruction_template</span><span class="p">:</span> <span class="n">PromptTemplate</span> <span class="o">=</span> <span class="n">DEFAULT_INSTRUCTION_PROMPT</span><span class="p">,</span>
+        <span class="n">input_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;query&quot;</span><span class="p">,</span>
+        <span class="c1"># Smirking kat language</span>
+        <span class="n">language_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;😼&quot;</span><span class="p">,</span>
+        <span class="n">input_formatter</span><span class="p">:</span> <span class="n">InputFormatter</span> <span class="o">=</span> <span class="s2">&quot;markdown_text&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CodeChain</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a code chain from pre-configured defaults.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            llm: The language model to use for coding</span>
+<span class="sd">            interpreter: The interpreter that will be used to execute the program</span>
+<span class="sd">            ast_printer: An ast printer that can print the AST as a text string</span>
+<span class="sd">            context: Either a list of functions or a context retriever.</span>
+<span class="sd">                               The list of functions can be a mixture of python</span>
+<span class="sd">                               callables and Kork external functions.</span>
+<span class="sd">                               All python functions will be converted into Kork</span>
+<span class="sd">                               external functions, and everything passed into</span>
+<span class="sd">                               the default context retriever.</span>
+<span class="sd">            examples: An example retriever or a list of examples.</span>
+<span class="sd">                       If a list of examples, a simple example retriever</span>
+<span class="sd">                       will be created.</span>
+<span class="sd">            instruction_template: Use to customize the instruction components of</span>
+<span class="sd">                                  the prompt.</span>
+<span class="sd">            language_name: The language name to use for the prompt.</span>
+<span class="sd">            input_formatter: A formatting that will be applied to the input part</span>
+<span class="sd">                             of each example tuple, if passing in a list of examples.</span>
+<span class="sd">            input_key: The input key to use.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A code chain</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">examples</span><span class="p">,</span> <span class="p">(</span><span class="n">AbstractExampleRetriever</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">))):</span>
+            <span class="n">_example_retriever</span> <span class="o">=</span> <span class="n">examples</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">examples</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">):</span>
+            <span class="n">formatted_examples</span> <span class="o">=</span> <span class="n">format_examples</span><span class="p">(</span>
+                <span class="n">language_name</span><span class="p">,</span>
+                <span class="n">examples</span><span class="p">,</span>
+                <span class="n">ast_printer</span><span class="p">,</span>
+                <span class="n">input_formatter</span><span class="o">=</span><span class="n">input_formatter</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">_example_retriever</span> <span class="o">=</span> <span class="n">SimpleExampleRetriever</span><span class="p">(</span><span class="n">examples</span><span class="o">=</span><span class="n">formatted_examples</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;example_retriever must be of type `AbstractExampleRetriever` or &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;`Sequence[ExampleTuple]`. Got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">examples</span><span class="p">)</span><span class="si">}</span><span class="s2"> instead.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="p">(</span><span class="n">AbstractContextRetriever</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">))):</span>
+            <span class="n">_context_retriever</span> <span class="o">=</span> <span class="n">context</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">):</span>
+            <span class="n">_context_retriever</span> <span class="o">=</span> <span class="n">SimpleContextRetriever</span><span class="o">.</span><span class="n">from_functions</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;context_retriever must be of type `AbstractContextRetriever` or &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;`Sequence[FunctionDefinition]`. Got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">context</span><span class="p">)</span><span class="si">}</span><span class="s2"> &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;instead.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">,</span>
+            <span class="n">interpreter</span><span class="o">=</span><span class="n">interpreter</span><span class="p">,</span>
+            <span class="n">ast_printer</span><span class="o">=</span><span class="n">ast_printer</span><span class="p">,</span>
+            <span class="n">context_retriever</span><span class="o">=</span><span class="n">_context_retriever</span><span class="p">,</span>
+            <span class="n">example_retriever</span><span class="o">=</span><span class="n">_example_retriever</span><span class="p">,</span>
+            <span class="n">instruction_template</span><span class="o">=</span><span class="n">instruction_template</span><span class="p">,</span>
+            <span class="n">input_key</span><span class="o">=</span><span class="n">input_key</span><span class="p">,</span>
+            <span class="n">language_name</span><span class="o">=</span><span class="n">language_name</span><span class="p">,</span>
+            <span class="n">input_formatter</span><span class="o">=</span><span class="n">input_formatter</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Langchain AI
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, Langchain AI.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

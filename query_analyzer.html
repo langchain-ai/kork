@@ -1,0 +1,785 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Query Analyzer &#8212; Kork 0.0.2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'query_analyzer';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Image Manipulation" href="examples/image_manipulation.html" />
+    <link rel="prev" title="Calculator" href="calculator.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/parrot.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/parrot.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="language.html">The Language 😼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ast.html">Abstract Syntax Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prompt.html">The Prompt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retrievers.html">Retrievers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="calculator.html">Calculator</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Query Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/image_manipulation.html">Image Manipulation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/langchain-ai/kork" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/query_analyzer.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Query Analyzer</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filters">Filters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prompt">The prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-test-it-out">Let’s test it out</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="query-analyzer">
+<h1>Query Analyzer<a class="headerlink" href="#query-analyzer" title="Permalink to this headline">#</a></h1>
+<p>A query analyzer is a frequent component of information retrieval systems that helps to improve the relevance of retrieved results.</p>
+<p>The analyzer takes as input a raw search query from the user (e.g., “cheap restaurants near me”) together with additional metadata,
+and translates the query into a more precise structured query.</p>
+<p>The resulting structured query could look like:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;entity_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;restaurant&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;price&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;op&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;attribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;location&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;op&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;near&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user_geo_location&quot;</span>
+<span class="w">        </span><span class="p">}</span><span class="w">        </span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To illustrate how <code class="docutils literal notranslate"><span class="pre">Kork</span></code> can be used, let’s re-implemnt the query analyzer implemented in
+langchain using the <a class="reference external" href="https://github.com/hwchase17/langchain/tree/8de1b4c4c20ea81f44628a1c42fbc1bbfff37520/langchain/chains/query_constructor">QueryConstructor chain</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">langchain</span>
+<span class="kn">from</span> <span class="nn">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span>
+<span class="kn">from</span> <span class="nn">kork</span> <span class="kn">import</span> <span class="n">CodeChain</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="filters">
+<h2>Filters<a class="headerlink" href="#filters" title="Permalink to this headline">#</a></h2>
+<p>We’ll define some functions that can be used for query analysis as foreign functions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The representation of a function per binary operator seemed to work better than a more
+generic representation of using a single function:</p>
+<p>def f_(attribute: str, op: Any, value: Any) -&gt; Any:
+“””Apply a filter on the given attribute with an operator (“&gt;”, “&lt;”, “=”, …) and value.”””
+…</p>
+<p>As an experiment, you could try to swap to the more generic representation and see
+if you can get it working well!</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gt</span><span class="p">(</span><span class="n">attribute</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter to where attribute &gt; value&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;attribute&quot;</span><span class="p">:</span> <span class="n">attribute</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">gte</span><span class="p">(</span><span class="n">attribute</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter to where attribute &gt;= value&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;attribute&quot;</span><span class="p">:</span> <span class="n">attribute</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;&gt;=&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">eq</span><span class="p">(</span><span class="n">attribute</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter to where attribute = value&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;attribute&quot;</span><span class="p">:</span> <span class="n">attribute</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">neq</span><span class="p">(</span><span class="n">attribute</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter to where attribute != value&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;attribute&quot;</span><span class="p">:</span> <span class="n">attribute</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;!=&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">lte</span><span class="p">(</span><span class="n">attribute</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter to where attribute &lt;= value&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;attribute&quot;</span><span class="p">:</span> <span class="n">attribute</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;=&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">lt</span><span class="p">(</span><span class="n">attribute</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter to where attribute &lt; value&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;attribute&quot;</span><span class="p">:</span> <span class="n">attribute</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">and_</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Combine a list of filters using an AND operator.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;filters&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">filters</span><span class="p">],</span>
+    <span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">or_</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Combine a list of filters using an OR operator.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;or_&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;filters&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">filters</span><span class="p">],</span>
+    <span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">in_</span><span class="p">(</span><span class="n">attribute</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filter to where attribute &gt;= value&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;attribute&quot;</span><span class="p">:</span> <span class="n">attribute</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filters</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span>
+        <span class="s2">&quot;filters&quot;</span><span class="p">:</span> <span class="n">filters</span><span class="p">,</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-prompt">
+<h2>The prompt<a class="headerlink" href="#the-prompt" title="Permalink to this headline">#</a></h2>
+<p>Let’s define a prompt to explain the task.</p>
+<p>You can experiment with the prompt to see if you could improve it!</p>
+<p>See the <a class="reference external" href="https://github.com/hwchase17/langchain/blob/8de1b4c4c20ea81f44628a1c42fbc1bbfff37520/langchain/chains/query_constructor/prompt.py">prompt</a> in the Langchain <code class="docutils literal notranslate"><span class="pre">query</span> <span class="pre">constructor</span></code> chain for insipiration.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">langchain.prompts</span> <span class="kn">import</span> <span class="n">PromptTemplate</span>
+
+<span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">Your task is to analyze the user&#39;s query and translate it into a search request composed </span><span class="se">\</span>
+<span class="s2">of a search string and a filter.</span>
+
+<span class="s2">Here is a set of functions that you can rely on: </span>
+
+<span class="si">{external_functions_block}</span>
+
+<span class="s2">Here is a schema of the data being queried.</span>
+
+<span class="s2">```TypeScript </span>
+
+<span class="s2">type schema = {{</span>
+<span class="s2">  author: string // The author of the document</span>
+<span class="s2">  pub_year: string // 4 digit format year representing year when doc was published</span>
+<span class="s2">  price: number // how much it costs to buy the document</span>
+<span class="s2">}}</span>
+<span class="s2">```</span>
+
+<span class="s2">Filter attributes must match the data schema. If the query seems to include other attributes, </span><span class="se">\</span>
+<span class="s2">assume those are not filters, but part of the search string.</span>
+<span class="s2">Pay attention to the doc string in the schema for each attribute. If it doesn&#39;t look like the </span><span class="se">\</span>
+<span class="s2">usage of the filter does not match the description in comment treat it as part of the search query.</span>
+
+<span class="s2">Filters can be combined using `and_` and `or_`.</span>
+
+<span class="s2">Please encapsulate the code in &lt;code&gt; and &lt;/code&gt; tags.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt_template</span> <span class="o">=</span> <span class="n">PromptTemplate</span><span class="p">(</span>
+    <span class="n">template</span><span class="o">=</span><span class="n">template</span><span class="p">,</span> <span class="n">input_variables</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;external_functions_block&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
+<p>Now, define some example programs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kork.parser</span> <span class="kn">import</span> <span class="n">parse</span>
+
+<span class="n">examples</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span>
+        <span class="s2">&quot;documents published after 2020&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;var result = request(null, gte(&quot;pub_year&quot;, 2020))&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="p">(</span>
+        <span class="s2">&quot;toy models of cars by john smith or ones that were published after 2012&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;var result = request(&quot;toy models of cars&quot;, or_([eq(&quot;author&quot;, &quot;john smith&quot;), gte(&quot;pub_year&quot;, 2012)]))&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="p">(</span>
+        <span class="s2">&quot;share prices by john or oliver&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;var result = request(&quot;share prices&quot;, in(&quot;author&quot;, [&quot;john&quot;, &quot;oliver&quot;]))&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">examples_in_ast</span> <span class="o">=</span> <span class="p">[(</span><span class="n">query</span><span class="p">,</span> <span class="n">parse</span><span class="p">(</span><span class="n">code</span><span class="p">))</span> <span class="k">for</span> <span class="n">query</span><span class="p">,</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">examples</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">examples_in_ast</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;documents published after 2020&#39;,
+ Program(stmts=(VarDecl(name=&#39;result&#39;, value=FunctionCall(name=&#39;request&#39;, args=(Literal(value=None), FunctionCall(name=&#39;gte&#39;, args=(Literal(value=&#39;pub_year&#39;), Literal(value=2020)))))),)))
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="let-s-test-it-out">
+<h2>Let’s test it out<a class="headerlink" href="#let-s-test-it-out" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;text-davinci-003&quot;</span><span class="p">,</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span>
+    <span class="n">frequency_penalty</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">presence_penalty</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">top_p</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">chain</span> <span class="o">=</span> <span class="n">CodeChain</span><span class="o">.</span><span class="n">from_defaults</span><span class="p">(</span>
+    <span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">,</span>
+    <span class="n">examples</span><span class="o">=</span><span class="n">examples_in_ast</span><span class="p">,</span>
+    <span class="n">context</span><span class="o">=</span><span class="p">[</span><span class="n">gte</span><span class="p">,</span> <span class="n">gt</span><span class="p">,</span> <span class="n">eq</span><span class="p">,</span> <span class="n">neq</span><span class="p">,</span> <span class="n">lte</span><span class="p">,</span> <span class="n">lt</span><span class="p">,</span> <span class="n">in_</span><span class="p">,</span> <span class="n">and_</span><span class="p">,</span> <span class="n">or_</span><span class="p">,</span> <span class="n">request</span><span class="p">],</span>
+    <span class="n">instruction_template</span><span class="o">=</span><span class="n">prompt_template</span><span class="p">,</span>
+    <span class="n">input_formatter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langchain</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queries</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;publications by mama bear published after 2013&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;documents about florida from 2013 or docs written by mama bear&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;smells like sunshine&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;documents that discuss $5&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;documents that discuss the $50 debt of the bank&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;docs that cost more than $150&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">queries</span><span class="p">:</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chain</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="n">query</span><span class="p">}))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kork.display</span> <span class="kn">import</span> <span class="n">as_html_dict</span><span class="p">,</span> <span class="n">display_html_results</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Examine the results below carefully! Not all the generated requests are correct. <code class="docutils literal notranslate"><span class="pre">errors</span></code> means that there were no runtime exceptions, not that the result is correct.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display_html_results</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">as_html_dict</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="s2">&quot;code&quot;</span><span class="p">,</span> <span class="s2">&quot;result&quot;</span><span class="p">,</span> <span class="s2">&quot;errors&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_4c82e_row0_col0, #T_4c82e_row0_col1, #T_4c82e_row0_col2, #T_4c82e_row0_col3, #T_4c82e_row1_col0, #T_4c82e_row1_col1, #T_4c82e_row1_col2, #T_4c82e_row1_col3, #T_4c82e_row2_col0, #T_4c82e_row2_col1, #T_4c82e_row2_col2, #T_4c82e_row2_col3, #T_4c82e_row3_col0, #T_4c82e_row3_col1, #T_4c82e_row3_col2, #T_4c82e_row3_col3, #T_4c82e_row4_col0, #T_4c82e_row4_col1, #T_4c82e_row4_col2, #T_4c82e_row4_col3, #T_4c82e_row5_col0, #T_4c82e_row5_col1, #T_4c82e_row5_col2, #T_4c82e_row5_col3 {
+  text-align: left;
+}
+</style>
+<table id="T_4c82e">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_4c82e_level0_col0" class="col_heading level0 col0" >query</th>
+      <th id="T_4c82e_level0_col1" class="col_heading level0 col1" >code</th>
+      <th id="T_4c82e_level0_col2" class="col_heading level0 col2" >result</th>
+      <th id="T_4c82e_level0_col3" class="col_heading level0 col3" >errors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_4c82e_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_4c82e_row0_col0" class="data row0 col0" >publications by mama bear<br/>published after 2013</td>
+      <td id="T_4c82e_row0_col1" class="data row0 col1" ><style>pre { line-height: 125%; }<br/>td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>.output_html .hll { background-color: #ffffcc }<br/>.output_html { background: #f8f8f8; }<br/>.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */<br/>.output_html .err { border: 1px solid #FF0000 } /* Error */<br/>.output_html .k { color: #008000; font-weight: bold } /* Keyword */<br/>.output_html .o { color: #666666 } /* Operator */<br/>.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */<br/>.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */<br/>.output_html .cp { color: #9C6500 } /* Comment.Preproc */<br/>.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */<br/>.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */<br/>.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */<br/>.output_html .gd { color: #A00000 } /* Generic.Deleted */<br/>.output_html .ge { font-style: italic } /* Generic.Emph */<br/>.output_html .gr { color: #E40000 } /* Generic.Error */<br/>.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */<br/>.output_html .gi { color: #008400 } /* Generic.Inserted */<br/>.output_html .go { color: #717171 } /* Generic.Output */<br/>.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */<br/>.output_html .gs { font-weight: bold } /* Generic.Strong */<br/>.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */<br/>.output_html .gt { color: #0044DD } /* Generic.Traceback */<br/>.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */<br/>.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */<br/>.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */<br/>.output_html .kp { color: #008000 } /* Keyword.Pseudo */<br/>.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */<br/>.output_html .kt { color: #B00040 } /* Keyword.Type */<br/>.output_html .m { color: #666666 } /* Literal.Number */<br/>.output_html .s { color: #BA2121 } /* Literal.String */<br/>.output_html .na { color: #687822 } /* Name.Attribute */<br/>.output_html .nb { color: #008000 } /* Name.Builtin */<br/>.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */<br/>.output_html .no { color: #880000 } /* Name.Constant */<br/>.output_html .nd { color: #AA22FF } /* Name.Decorator */<br/>.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */<br/>.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */<br/>.output_html .nf { color: #0000FF } /* Name.Function */<br/>.output_html .nl { color: #767600 } /* Name.Label */<br/>.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */<br/>.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */<br/>.output_html .nv { color: #19177C } /* Name.Variable */<br/>.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */<br/>.output_html .w { color: #bbbbbb } /* Text.Whitespace */<br/>.output_html .mb { color: #666666 } /* Literal.Number.Bin */<br/>.output_html .mf { color: #666666 } /* Literal.Number.Float */<br/>.output_html .mh { color: #666666 } /* Literal.Number.Hex */<br/>.output_html .mi { color: #666666 } /* Literal.Number.Integer */<br/>.output_html .mo { color: #666666 } /* Literal.Number.Oct */<br/>.output_html .sa { color: #BA2121 } /* Literal.String.Affix */<br/>.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */<br/>.output_html .sc { color: #BA2121 } /* Literal.String.Char */<br/>.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */<br/>.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */<br/>.output_html .s2 { color: #BA2121 } /* Literal.String.Double */<br/>.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */<br/>.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */<br/>.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */<br/>.output_html .sx { color: #008000 } /* Literal.String.Other */<br/>.output_html .sr { color: #A45A77 } /* Literal.String.Regex */<br/>.output_html .s1 { color: #BA2121 } /* Literal.String.Single */<br/>.output_html .ss { color: #19177C } /* Literal.String.Symbol */<br/>.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */<br/>.output_html .fm { color: #0000FF } /* Name.Function.Magic */<br/>.output_html .vc { color: #19177C } /* Name.Variable.Class */<br/>.output_html .vg { color: #19177C } /* Name.Variable.Global */<br/>.output_html .vi { color: #19177C } /* Name.Variable.Instance */<br/>.output_html .vm { color: #19177C } /* Name.Variable.Magic */<br/>.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;publications&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">and_</span><span class="p">([</span><span class="n">eq</span><span class="p">(</span><span class="s2">&quot;author&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mama bear&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">gte</span><span class="p">(</span><span class="s2">&quot;pub_year&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2013</span><span class="p">)]))</span><br/></pre></div></td>
+      <td id="T_4c82e_row0_col2" class="data row0 col2" >{&#x27;query&#x27;: &#x27;publications&#x27;, &#x27;filters&#x27;: {&#x27;op&#x27;: &#x27;and&#x27;, &#x27;filters&#x27;: [[{&#x27;attribute&#x27;: &#x27;author&#x27;, &#x27;op&#x27;: &#x27;=&#x27;, &#x27;value&#x27;: &#x27;mama bear&#x27;}, {&#x27;attribute&#x27;: &#x27;pub_year&#x27;, &#x27;op&#x27;: &#x27;&gt;=&#x27;, &#x27;value&#x27;: 2013}]]}}</td>
+      <td id="T_4c82e_row0_col3" class="data row0 col3" >[]</td>
+    </tr>
+    <tr>
+      <th id="T_4c82e_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_4c82e_row1_col0" class="data row1 col0" >documents about florida from<br/>2013 or docs written by mama<br/>bear</td>
+      <td id="T_4c82e_row1_col1" class="data row1 col1" ><style>pre { line-height: 125%; }<br/>td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>.output_html .hll { background-color: #ffffcc }<br/>.output_html { background: #f8f8f8; }<br/>.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */<br/>.output_html .err { border: 1px solid #FF0000 } /* Error */<br/>.output_html .k { color: #008000; font-weight: bold } /* Keyword */<br/>.output_html .o { color: #666666 } /* Operator */<br/>.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */<br/>.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */<br/>.output_html .cp { color: #9C6500 } /* Comment.Preproc */<br/>.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */<br/>.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */<br/>.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */<br/>.output_html .gd { color: #A00000 } /* Generic.Deleted */<br/>.output_html .ge { font-style: italic } /* Generic.Emph */<br/>.output_html .gr { color: #E40000 } /* Generic.Error */<br/>.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */<br/>.output_html .gi { color: #008400 } /* Generic.Inserted */<br/>.output_html .go { color: #717171 } /* Generic.Output */<br/>.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */<br/>.output_html .gs { font-weight: bold } /* Generic.Strong */<br/>.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */<br/>.output_html .gt { color: #0044DD } /* Generic.Traceback */<br/>.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */<br/>.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */<br/>.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */<br/>.output_html .kp { color: #008000 } /* Keyword.Pseudo */<br/>.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */<br/>.output_html .kt { color: #B00040 } /* Keyword.Type */<br/>.output_html .m { color: #666666 } /* Literal.Number */<br/>.output_html .s { color: #BA2121 } /* Literal.String */<br/>.output_html .na { color: #687822 } /* Name.Attribute */<br/>.output_html .nb { color: #008000 } /* Name.Builtin */<br/>.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */<br/>.output_html .no { color: #880000 } /* Name.Constant */<br/>.output_html .nd { color: #AA22FF } /* Name.Decorator */<br/>.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */<br/>.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */<br/>.output_html .nf { color: #0000FF } /* Name.Function */<br/>.output_html .nl { color: #767600 } /* Name.Label */<br/>.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */<br/>.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */<br/>.output_html .nv { color: #19177C } /* Name.Variable */<br/>.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */<br/>.output_html .w { color: #bbbbbb } /* Text.Whitespace */<br/>.output_html .mb { color: #666666 } /* Literal.Number.Bin */<br/>.output_html .mf { color: #666666 } /* Literal.Number.Float */<br/>.output_html .mh { color: #666666 } /* Literal.Number.Hex */<br/>.output_html .mi { color: #666666 } /* Literal.Number.Integer */<br/>.output_html .mo { color: #666666 } /* Literal.Number.Oct */<br/>.output_html .sa { color: #BA2121 } /* Literal.String.Affix */<br/>.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */<br/>.output_html .sc { color: #BA2121 } /* Literal.String.Char */<br/>.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */<br/>.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */<br/>.output_html .s2 { color: #BA2121 } /* Literal.String.Double */<br/>.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */<br/>.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */<br/>.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */<br/>.output_html .sx { color: #008000 } /* Literal.String.Other */<br/>.output_html .sr { color: #A45A77 } /* Literal.String.Regex */<br/>.output_html .s1 { color: #BA2121 } /* Literal.String.Single */<br/>.output_html .ss { color: #19177C } /* Literal.String.Symbol */<br/>.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */<br/>.output_html .fm { color: #0000FF } /* Name.Function.Magic */<br/>.output_html .vc { color: #19177C } /* Name.Variable.Class */<br/>.output_html .vg { color: #19177C } /* Name.Variable.Global */<br/>.output_html .vi { color: #19177C } /* Name.Variable.Instance */<br/>.output_html .vm { color: #19177C } /* Name.Variable.Magic */<br/>.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;documents about florida&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">or_</span><span class="p">([</span><span class="n">gte</span><span class="p">(</span><span class="s2">&quot;pub_year&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2013</span><span class="p">),</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="s2">&quot;author&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mama bear&quot;</span><span class="p">)]))</span><br/></pre></div></td>
+      <td id="T_4c82e_row1_col2" class="data row1 col2" >{&#x27;query&#x27;: &#x27;documents about florida&#x27;, &#x27;filters&#x27;: {&#x27;op&#x27;: &#x27;or_&#x27;, &#x27;filters&#x27;: [[{&#x27;attribute&#x27;: &#x27;pub_year&#x27;, &#x27;op&#x27;: &#x27;&gt;=&#x27;, &#x27;value&#x27;: 2013}, {&#x27;attribute&#x27;: &#x27;author&#x27;, &#x27;op&#x27;: &#x27;=&#x27;, &#x27;value&#x27;: &#x27;mama bear&#x27;}]]}}</td>
+      <td id="T_4c82e_row1_col3" class="data row1 col3" >[]</td>
+    </tr>
+    <tr>
+      <th id="T_4c82e_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_4c82e_row2_col0" class="data row2 col0" >smells like sunshine</td>
+      <td id="T_4c82e_row2_col1" class="data row2 col1" ><style>pre { line-height: 125%; }<br/>td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>.output_html .hll { background-color: #ffffcc }<br/>.output_html { background: #f8f8f8; }<br/>.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */<br/>.output_html .err { border: 1px solid #FF0000 } /* Error */<br/>.output_html .k { color: #008000; font-weight: bold } /* Keyword */<br/>.output_html .o { color: #666666 } /* Operator */<br/>.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */<br/>.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */<br/>.output_html .cp { color: #9C6500 } /* Comment.Preproc */<br/>.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */<br/>.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */<br/>.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */<br/>.output_html .gd { color: #A00000 } /* Generic.Deleted */<br/>.output_html .ge { font-style: italic } /* Generic.Emph */<br/>.output_html .gr { color: #E40000 } /* Generic.Error */<br/>.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */<br/>.output_html .gi { color: #008400 } /* Generic.Inserted */<br/>.output_html .go { color: #717171 } /* Generic.Output */<br/>.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */<br/>.output_html .gs { font-weight: bold } /* Generic.Strong */<br/>.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */<br/>.output_html .gt { color: #0044DD } /* Generic.Traceback */<br/>.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */<br/>.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */<br/>.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */<br/>.output_html .kp { color: #008000 } /* Keyword.Pseudo */<br/>.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */<br/>.output_html .kt { color: #B00040 } /* Keyword.Type */<br/>.output_html .m { color: #666666 } /* Literal.Number */<br/>.output_html .s { color: #BA2121 } /* Literal.String */<br/>.output_html .na { color: #687822 } /* Name.Attribute */<br/>.output_html .nb { color: #008000 } /* Name.Builtin */<br/>.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */<br/>.output_html .no { color: #880000 } /* Name.Constant */<br/>.output_html .nd { color: #AA22FF } /* Name.Decorator */<br/>.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */<br/>.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */<br/>.output_html .nf { color: #0000FF } /* Name.Function */<br/>.output_html .nl { color: #767600 } /* Name.Label */<br/>.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */<br/>.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */<br/>.output_html .nv { color: #19177C } /* Name.Variable */<br/>.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */<br/>.output_html .w { color: #bbbbbb } /* Text.Whitespace */<br/>.output_html .mb { color: #666666 } /* Literal.Number.Bin */<br/>.output_html .mf { color: #666666 } /* Literal.Number.Float */<br/>.output_html .mh { color: #666666 } /* Literal.Number.Hex */<br/>.output_html .mi { color: #666666 } /* Literal.Number.Integer */<br/>.output_html .mo { color: #666666 } /* Literal.Number.Oct */<br/>.output_html .sa { color: #BA2121 } /* Literal.String.Affix */<br/>.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */<br/>.output_html .sc { color: #BA2121 } /* Literal.String.Char */<br/>.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */<br/>.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */<br/>.output_html .s2 { color: #BA2121 } /* Literal.String.Double */<br/>.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */<br/>.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */<br/>.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */<br/>.output_html .sx { color: #008000 } /* Literal.String.Other */<br/>.output_html .sr { color: #A45A77 } /* Literal.String.Regex */<br/>.output_html .s1 { color: #BA2121 } /* Literal.String.Single */<br/>.output_html .ss { color: #19177C } /* Literal.String.Symbol */<br/>.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */<br/>.output_html .fm { color: #0000FF } /* Name.Function.Magic */<br/>.output_html .vc { color: #19177C } /* Name.Variable.Class */<br/>.output_html .vg { color: #19177C } /* Name.Variable.Global */<br/>.output_html .vi { color: #19177C } /* Name.Variable.Instance */<br/>.output_html .vm { color: #19177C } /* Name.Variable.Magic */<br/>.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;smells like sunshine&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="p">)</span><br/></pre></div></td>
+      <td id="T_4c82e_row2_col2" class="data row2 col2" >{&#x27;query&#x27;: &#x27;smells like sunshine&#x27;, &#x27;filters&#x27;: None}</td>
+      <td id="T_4c82e_row2_col3" class="data row2 col3" >[]</td>
+    </tr>
+    <tr>
+      <th id="T_4c82e_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_4c82e_row3_col0" class="data row3 col0" >documents that discuss $5</td>
+      <td id="T_4c82e_row3_col1" class="data row3 col1" ><style>pre { line-height: 125%; }<br/>td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>.output_html .hll { background-color: #ffffcc }<br/>.output_html { background: #f8f8f8; }<br/>.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */<br/>.output_html .err { border: 1px solid #FF0000 } /* Error */<br/>.output_html .k { color: #008000; font-weight: bold } /* Keyword */<br/>.output_html .o { color: #666666 } /* Operator */<br/>.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */<br/>.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */<br/>.output_html .cp { color: #9C6500 } /* Comment.Preproc */<br/>.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */<br/>.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */<br/>.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */<br/>.output_html .gd { color: #A00000 } /* Generic.Deleted */<br/>.output_html .ge { font-style: italic } /* Generic.Emph */<br/>.output_html .gr { color: #E40000 } /* Generic.Error */<br/>.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */<br/>.output_html .gi { color: #008400 } /* Generic.Inserted */<br/>.output_html .go { color: #717171 } /* Generic.Output */<br/>.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */<br/>.output_html .gs { font-weight: bold } /* Generic.Strong */<br/>.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */<br/>.output_html .gt { color: #0044DD } /* Generic.Traceback */<br/>.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */<br/>.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */<br/>.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */<br/>.output_html .kp { color: #008000 } /* Keyword.Pseudo */<br/>.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */<br/>.output_html .kt { color: #B00040 } /* Keyword.Type */<br/>.output_html .m { color: #666666 } /* Literal.Number */<br/>.output_html .s { color: #BA2121 } /* Literal.String */<br/>.output_html .na { color: #687822 } /* Name.Attribute */<br/>.output_html .nb { color: #008000 } /* Name.Builtin */<br/>.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */<br/>.output_html .no { color: #880000 } /* Name.Constant */<br/>.output_html .nd { color: #AA22FF } /* Name.Decorator */<br/>.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */<br/>.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */<br/>.output_html .nf { color: #0000FF } /* Name.Function */<br/>.output_html .nl { color: #767600 } /* Name.Label */<br/>.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */<br/>.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */<br/>.output_html .nv { color: #19177C } /* Name.Variable */<br/>.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */<br/>.output_html .w { color: #bbbbbb } /* Text.Whitespace */<br/>.output_html .mb { color: #666666 } /* Literal.Number.Bin */<br/>.output_html .mf { color: #666666 } /* Literal.Number.Float */<br/>.output_html .mh { color: #666666 } /* Literal.Number.Hex */<br/>.output_html .mi { color: #666666 } /* Literal.Number.Integer */<br/>.output_html .mo { color: #666666 } /* Literal.Number.Oct */<br/>.output_html .sa { color: #BA2121 } /* Literal.String.Affix */<br/>.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */<br/>.output_html .sc { color: #BA2121 } /* Literal.String.Char */<br/>.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */<br/>.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */<br/>.output_html .s2 { color: #BA2121 } /* Literal.String.Double */<br/>.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */<br/>.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */<br/>.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */<br/>.output_html .sx { color: #008000 } /* Literal.String.Other */<br/>.output_html .sr { color: #A45A77 } /* Literal.String.Regex */<br/>.output_html .s1 { color: #BA2121 } /* Literal.String.Single */<br/>.output_html .ss { color: #19177C } /* Literal.String.Symbol */<br/>.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */<br/>.output_html .fm { color: #0000FF } /* Name.Function.Magic */<br/>.output_html .vc { color: #19177C } /* Name.Variable.Class */<br/>.output_html .vg { color: #19177C } /* Name.Variable.Global */<br/>.output_html .vi { color: #19177C } /* Name.Variable.Instance */<br/>.output_html .vm { color: #19177C } /* Name.Variable.Magic */<br/>.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;documents that discuss $5&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">eq</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span><br/></pre></div></td>
+      <td id="T_4c82e_row3_col2" class="data row3 col2" >{&#x27;query&#x27;: &#x27;documents that discuss $5&#x27;, &#x27;filters&#x27;: {&#x27;attribute&#x27;: &#x27;price&#x27;, &#x27;op&#x27;: &#x27;=&#x27;, &#x27;value&#x27;: 5}}</td>
+      <td id="T_4c82e_row3_col3" class="data row3 col3" >[]</td>
+    </tr>
+    <tr>
+      <th id="T_4c82e_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_4c82e_row4_col0" class="data row4 col0" >documents that discuss the $50<br/>debt of the bank</td>
+      <td id="T_4c82e_row4_col1" class="data row4 col1" ><style>pre { line-height: 125%; }<br/>td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>.output_html .hll { background-color: #ffffcc }<br/>.output_html { background: #f8f8f8; }<br/>.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */<br/>.output_html .err { border: 1px solid #FF0000 } /* Error */<br/>.output_html .k { color: #008000; font-weight: bold } /* Keyword */<br/>.output_html .o { color: #666666 } /* Operator */<br/>.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */<br/>.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */<br/>.output_html .cp { color: #9C6500 } /* Comment.Preproc */<br/>.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */<br/>.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */<br/>.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */<br/>.output_html .gd { color: #A00000 } /* Generic.Deleted */<br/>.output_html .ge { font-style: italic } /* Generic.Emph */<br/>.output_html .gr { color: #E40000 } /* Generic.Error */<br/>.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */<br/>.output_html .gi { color: #008400 } /* Generic.Inserted */<br/>.output_html .go { color: #717171 } /* Generic.Output */<br/>.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */<br/>.output_html .gs { font-weight: bold } /* Generic.Strong */<br/>.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */<br/>.output_html .gt { color: #0044DD } /* Generic.Traceback */<br/>.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */<br/>.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */<br/>.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */<br/>.output_html .kp { color: #008000 } /* Keyword.Pseudo */<br/>.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */<br/>.output_html .kt { color: #B00040 } /* Keyword.Type */<br/>.output_html .m { color: #666666 } /* Literal.Number */<br/>.output_html .s { color: #BA2121 } /* Literal.String */<br/>.output_html .na { color: #687822 } /* Name.Attribute */<br/>.output_html .nb { color: #008000 } /* Name.Builtin */<br/>.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */<br/>.output_html .no { color: #880000 } /* Name.Constant */<br/>.output_html .nd { color: #AA22FF } /* Name.Decorator */<br/>.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */<br/>.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */<br/>.output_html .nf { color: #0000FF } /* Name.Function */<br/>.output_html .nl { color: #767600 } /* Name.Label */<br/>.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */<br/>.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */<br/>.output_html .nv { color: #19177C } /* Name.Variable */<br/>.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */<br/>.output_html .w { color: #bbbbbb } /* Text.Whitespace */<br/>.output_html .mb { color: #666666 } /* Literal.Number.Bin */<br/>.output_html .mf { color: #666666 } /* Literal.Number.Float */<br/>.output_html .mh { color: #666666 } /* Literal.Number.Hex */<br/>.output_html .mi { color: #666666 } /* Literal.Number.Integer */<br/>.output_html .mo { color: #666666 } /* Literal.Number.Oct */<br/>.output_html .sa { color: #BA2121 } /* Literal.String.Affix */<br/>.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */<br/>.output_html .sc { color: #BA2121 } /* Literal.String.Char */<br/>.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */<br/>.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */<br/>.output_html .s2 { color: #BA2121 } /* Literal.String.Double */<br/>.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */<br/>.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */<br/>.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */<br/>.output_html .sx { color: #008000 } /* Literal.String.Other */<br/>.output_html .sr { color: #A45A77 } /* Literal.String.Regex */<br/>.output_html .s1 { color: #BA2121 } /* Literal.String.Single */<br/>.output_html .ss { color: #19177C } /* Literal.String.Symbol */<br/>.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */<br/>.output_html .fm { color: #0000FF } /* Name.Function.Magic */<br/>.output_html .vc { color: #19177C } /* Name.Variable.Class */<br/>.output_html .vg { color: #19177C } /* Name.Variable.Global */<br/>.output_html .vi { color: #19177C } /* Name.Variable.Instance */<br/>.output_html .vm { color: #19177C } /* Name.Variable.Magic */<br/>.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;documents that discuss the $50 debt of the bank&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="p">)</span><br/></pre></div></td>
+      <td id="T_4c82e_row4_col2" class="data row4 col2" >{&#x27;query&#x27;: &#x27;documents that discuss the $50 debt of the bank&#x27;, &#x27;filters&#x27;: None}</td>
+      <td id="T_4c82e_row4_col3" class="data row4 col3" >[]</td>
+    </tr>
+    <tr>
+      <th id="T_4c82e_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_4c82e_row5_col0" class="data row5 col0" >docs that cost more than $150</td>
+      <td id="T_4c82e_row5_col1" class="data row5 col1" ><style>pre { line-height: 125%; }<br/>td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>.output_html .hll { background-color: #ffffcc }<br/>.output_html { background: #f8f8f8; }<br/>.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */<br/>.output_html .err { border: 1px solid #FF0000 } /* Error */<br/>.output_html .k { color: #008000; font-weight: bold } /* Keyword */<br/>.output_html .o { color: #666666 } /* Operator */<br/>.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */<br/>.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */<br/>.output_html .cp { color: #9C6500 } /* Comment.Preproc */<br/>.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */<br/>.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */<br/>.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */<br/>.output_html .gd { color: #A00000 } /* Generic.Deleted */<br/>.output_html .ge { font-style: italic } /* Generic.Emph */<br/>.output_html .gr { color: #E40000 } /* Generic.Error */<br/>.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */<br/>.output_html .gi { color: #008400 } /* Generic.Inserted */<br/>.output_html .go { color: #717171 } /* Generic.Output */<br/>.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */<br/>.output_html .gs { font-weight: bold } /* Generic.Strong */<br/>.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */<br/>.output_html .gt { color: #0044DD } /* Generic.Traceback */<br/>.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */<br/>.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */<br/>.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */<br/>.output_html .kp { color: #008000 } /* Keyword.Pseudo */<br/>.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */<br/>.output_html .kt { color: #B00040 } /* Keyword.Type */<br/>.output_html .m { color: #666666 } /* Literal.Number */<br/>.output_html .s { color: #BA2121 } /* Literal.String */<br/>.output_html .na { color: #687822 } /* Name.Attribute */<br/>.output_html .nb { color: #008000 } /* Name.Builtin */<br/>.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */<br/>.output_html .no { color: #880000 } /* Name.Constant */<br/>.output_html .nd { color: #AA22FF } /* Name.Decorator */<br/>.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */<br/>.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */<br/>.output_html .nf { color: #0000FF } /* Name.Function */<br/>.output_html .nl { color: #767600 } /* Name.Label */<br/>.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */<br/>.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */<br/>.output_html .nv { color: #19177C } /* Name.Variable */<br/>.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */<br/>.output_html .w { color: #bbbbbb } /* Text.Whitespace */<br/>.output_html .mb { color: #666666 } /* Literal.Number.Bin */<br/>.output_html .mf { color: #666666 } /* Literal.Number.Float */<br/>.output_html .mh { color: #666666 } /* Literal.Number.Hex */<br/>.output_html .mi { color: #666666 } /* Literal.Number.Integer */<br/>.output_html .mo { color: #666666 } /* Literal.Number.Oct */<br/>.output_html .sa { color: #BA2121 } /* Literal.String.Affix */<br/>.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */<br/>.output_html .sc { color: #BA2121 } /* Literal.String.Char */<br/>.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */<br/>.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */<br/>.output_html .s2 { color: #BA2121 } /* Literal.String.Double */<br/>.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */<br/>.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */<br/>.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */<br/>.output_html .sx { color: #008000 } /* Literal.String.Other */<br/>.output_html .sr { color: #A45A77 } /* Literal.String.Regex */<br/>.output_html .s1 { color: #BA2121 } /* Literal.String.Single */<br/>.output_html .ss { color: #19177C } /* Literal.String.Symbol */<br/>.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */<br/>.output_html .fm { color: #0000FF } /* Name.Function.Magic */<br/>.output_html .vc { color: #19177C } /* Name.Variable.Class */<br/>.output_html .vg { color: #19177C } /* Name.Variable.Global */<br/>.output_html .vi { color: #19177C } /* Name.Variable.Instance */<br/>.output_html .vm { color: #19177C } /* Name.Variable.Magic */<br/>.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">(</span><span class="nb nb-Type">null</span><span class="p">,</span><span class="w"> </span><span class="n">gt</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">))</span><br/></pre></div></td>
+      <td id="T_4c82e_row5_col2" class="data row5 col2" >{&#x27;query&#x27;: None, &#x27;filters&#x27;: {&#x27;attribute&#x27;: &#x27;price&#x27;, &#x27;op&#x27;: &#x27;&gt;&#x27;, &#x27;value&#x27;: 150}}</td>
+      <td id="T_4c82e_row5_col3" class="data row5 col3" >[]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="calculator.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Calculator</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="examples/image_manipulation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Image Manipulation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filters">Filters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prompt">The prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-test-it-out">Let’s test it out</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Langchain AI
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, Langchain AI.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

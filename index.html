@@ -1,0 +1,620 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction &#8212; Kork 0.0.2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Overview" href="introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/parrot.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/parrot.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="language.html">The Language 😼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ast.html">Abstract Syntax Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prompt.html">The Prompt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retrievers.html">Retrievers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="calculator.html">Calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="query_analyzer.html">Query Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/image_manipulation.html">Image Manipulation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/langchain-ai/kork" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how">How</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what">What?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality">Quality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#safety">Safety</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-work">Future Work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compatibility">Compatibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appreciation">🙏 Appreciation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">© Contributing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-name">🎶 Why the name?</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Kork</span></code> is an <em>experimental</em> <a class="reference external" href="https://python.langchain.com/en/latest/modules/chains.html">Langchain chain</a> that helps build natural language APIs powered by LLMs.</p>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Assemble a natural language API from a set of python functions.</p></li>
+<li><p>Generate a prompt to help the LLM write a <strong>correct</strong> program.</p></li>
+<li><p>Execute the program generated by the LLM <strong>safely</strong>.</p></li>
+<li><p>Program generation takes a single LLM call, as opposed to agents that use a call per action taken.</p></li>
+</ol>
+</section>
+<section id="how">
+<h2>How<a class="headerlink" href="#how" title="Permalink to this headline">#</a></h2>
+<p>The chain takes a user query, translates it into a program, and executes it using the <code class="docutils literal notranslate"><span class="pre">Kork</span></code> interpreter.</p>
+<p>The interpreter is used to run code written in the <code class="docutils literal notranslate"><span class="pre">Kork</span></code> programming language.</p>
+<p>The language is limited by design to variable declarations, function invocations and arithmetic operations.</p>
+<p>This limitation allows controlling the kind of programs the LLMs can generate, making the output of the LLM more predictable and safer to execute in a production setting. (An agent with access to “constrained” tools has similar benefits, but requires a call per action taken.)</p>
+<p><code class="docutils literal notranslate"><span class="pre">Kork</span></code> adds a few additional tricks (e.g., retriever interfaces for examples and foreign functions) to help guide the LLM to generate a <strong>correct</strong> program.</p>
+</section>
+<section id="what">
+<h2>What?<a class="headerlink" href="#what" title="Permalink to this headline">#</a></h2>
+<p><em>No loops, no conditionals, no file access, no network access, no arbitrary code execution. WHAT?!</em></p>
+<p>The ability to invoke custom functions goes a long way in terms of the kinds of programs that can be written! (You can always add a <code class="docutils literal notranslate"><span class="pre">write_to_file</span></code> function!)</p>
+</section>
+<section id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Kork</span></code> <strong>cannot write arbitrary</strong> code. If that’s what you need, save yourself some time and use <a class="reference external" href="https://www.docker.com/">docker</a> and a real programming language.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Kork</span></code> chain is <strong>not</strong> an Agent, so it cannot inspect intermediate steps, instead it generates a pre-defined set of function calls that need to be executed. (But remember that function calls can involve calls to an agent!)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Kork</span></code> language and interpreter are limited to <em>function invocation</em>, <em>variable declaration</em> and
+<em>basic arithmetic</em> (no function declaration, loops etc.)</p></li>
+<li><p>Only supporting <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">type(None)</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code> types. No support for <code class="docutils literal notranslate"><span class="pre">lists</span></code> or <code class="docutils literal notranslate"><span class="pre">object</span></code> types.</p></li>
+<li><p>Very limited type annotations.</p></li>
+</ul>
+</section>
+<section id="quality">
+<h2>Quality<a class="headerlink" href="#quality" title="Permalink to this headline">#</a></h2>
+<p>The short version: No benchmarks yet!</p>
+<p>The long version: Quality of generated programs depends on many factors.</p>
+<p>You can experiment with tweaking the prompt (e.g., explain the syntax of the language), changing the foreign function retriever (e.g., retrieve the most relevant foreign functions based on the user query), or providing examples in the form of (query, expected program).</p>
+<p>The prompt, examples and syntax of the language can trip up the LLM to assume
+it’s programming in a specific language (e.g., typescript or python) and assume
+that it can use language features that are not supported by <code class="docutils literal notranslate"><span class="pre">Kork</span></code> or to import
+libraries that are not available.</p>
+</section>
+<section id="safety">
+<h2>Safety<a class="headerlink" href="#safety" title="Permalink to this headline">#</a></h2>
+<p>Nothing is bulletproof when humans are involved.</p>
+<ul class="simple">
+<li><p>Don’t do silly things like exposing <code class="docutils literal notranslate"><span class="pre">eval</span></code> as a foreign function.</p></li>
+<li><p>If a foreign function allocates memory, the LLM could ask for more memory than is available crashing the process.</p></li>
+<li><p>Think carefully before using the output of an LLM. If the LLM behaves maliciously, is it safe to use an LLM in the given context?</p></li>
+</ul>
+</section>
+<section id="future-work">
+<h2>Future Work<a class="headerlink" href="#future-work" title="Permalink to this headline">#</a></h2>
+<p>Let us know if you’re interested in contributing or have ideas for improvements!</p>
+<ul class="simple">
+<li><p>Allow enabling/disabling language features</p></li>
+<li><p>Allow changing underlying language syntax</p></li>
+<li><p>Add support for objects</p></li>
+<li><p>Add other language features (e.g., loops)</p></li>
+<li><p>Provide foreign function retriever implementations based on similarity to user query</p></li>
+</ul>
+</section>
+<section id="compatibility">
+<h2>Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Kork</span></code> is tested against python 3.8, 3.9, 3.10, 3.11.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>kork
+</pre></div>
+</div>
+</section>
+<section id="appreciation">
+<h2>🙏 Appreciation<a class="headerlink" href="#appreciation" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/lark-parser/lark">Lark</a> – For making it easy to define a grammar and parse it!</p></li>
+<li><p><a class="reference external" href="https://github.com/munificent">Bob Nystrom</a> – For writing <a class="reference external" href="https://www.craftinginterpreters.com/">Crafting Interpreters</a>!</p></li>
+</ul>
+</section>
+<section id="contributing">
+<h2>© Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">#</a></h2>
+<p>If you have any ideas or feature requests, please open an issue and share!</p>
+<p>See <a class="reference external" href="https://github.com/langchain-ai/kork/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a> for more information.</p>
+</section>
+<section id="why-the-name">
+<h2>🎶 Why the name?<a class="headerlink" href="#why-the-name" title="Permalink to this headline">#</a></h2>
+<p>Fast to type and maybe sufficiently unique.</p>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#foreign-functions">Foreign Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#codechain">CodeChain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#the-prompt">The prompt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#the-environment">The Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#relativistic-kinetic-energy">Relativistic Kinetic Energy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#calculations-with-llms">Calculations with LLMs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="language.html">The Language 😼</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="language.html#alternative-approaches">Alternative Approaches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html#the-interpreter">The interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html#environment">Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html#foreign-functions">Foreign Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ast.html">Abstract Syntax Tree</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ast.html#parse">Parse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ast.html#astprinter">AstPrinter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ast.html#nodes">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#the-simplest-way">The Simplest Way</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#the-hardest-way">The Hardest Way</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#formatted-example">Formatted Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#the-hardest-way-made-easier">The Hardest Way Made Easier</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="prompt.html">The Prompt</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="prompt.html#custom-prompt">Custom prompt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prompt.html#declare-the-chain">Declare the chain</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="retrievers.html">Retrievers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="retrievers.html#context-retriever">Context Retriever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="retrievers.html#example-retriever">Example Retriever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="retrievers.html#declare-the-chain">Declare the chain</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="calculator.html">Calculator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="calculator.html#let-s-test">Let’s test!</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="query_analyzer.html">Query Analyzer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="query_analyzer.html#filters">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query_analyzer.html#the-prompt">The prompt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query_analyzer.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query_analyzer.html#let-s-test-it-out">Let’s test it out</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/image_manipulation.html">Image Manipulation</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#kork-interpreter">Kork Interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#index">Index</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="right-next"
+       href="introduction.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Overview</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how">How</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what">What?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality">Quality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#safety">Safety</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#future-work">Future Work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compatibility">Compatibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appreciation">🙏 Appreciation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">© Contributing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-name">🎶 Why the name?</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Langchain AI
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, Langchain AI.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

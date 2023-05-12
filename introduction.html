@@ -1,0 +1,1156 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Overview &#8212; Kork 0.0.2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'introduction';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The Language 😼" href="language.html" />
+    <link rel="prev" title="Introduction" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/parrot.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/parrot.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="language.html">The Language 😼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ast.html">Abstract Syntax Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prompt.html">The Prompt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retrievers.html">Retrievers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="calculator.html">Calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="query_analyzer.html">Query Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/image_manipulation.html">Image Manipulation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/langchain-ai/kork" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/introduction.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Overview</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foreign-functions">Foreign Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#codechain">CodeChain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prompt">The prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-environment">The Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relativistic-kinetic-energy">Relativistic Kinetic Energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-with-llms">Calculations with LLMs</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
+<p>Here, we’ll see how to define a <code class="docutils literal notranslate"><span class="pre">Kork</span></code> CodeChain that can invoke external python functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">langchain</span>
+<span class="kn">from</span> <span class="nn">langchain.chat_models</span> <span class="kn">import</span> <span class="n">ChatOpenAI</span>
+<span class="kn">from</span> <span class="nn">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="kn">from</span> <span class="nn">kork</span> <span class="kn">import</span> <span class="n">CodeChain</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="foreign-functions">
+<h2>Foreign Functions<a class="headerlink" href="#foreign-functions" title="Permalink to this headline">#</a></h2>
+<p>Let’s create a list of python functions that we want the chain to be able to invoke.</p>
+<p>Information about these functions will be added into the prompt to let the LLM know it can use them.</p>
+<p>The funtions will also be added as foregin functions into the kork interpreter environment, so the interpreter can actually use them!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">output_with_matplotlib</span><span class="p">(</span><span class="n">output</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Function that will output a plot using matplotlib.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LLM failed to produce a string!&quot;</span><span class="p">)</span>
+
+    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">what_to_print</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A function that something to the screen&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invoking a custom user defined function&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">matplotlib</span>
+
+        <span class="n">output_with_matplotlib</span><span class="p">(</span><span class="n">what_to_print</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matplotlib missing so using print&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">what_to_print</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished invoking a custom user defined function&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foreign_functions</span> <span class="o">=</span> <span class="p">[</span><span class="n">foo</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">log2</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
+<p>Use examples to teach the llm how to work in the target problem domain. Later in the docs, we’ll see how to customize the entire prompt.</p>
+<p>If the programs invoke functinos, make sure that the function names match exactly the names of the foreign functions provided (no validation here currently).</p>
+<p>We can specify the programs in text format.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">examples</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;calculate the sqrt of 2&quot;</span><span class="p">,</span> <span class="s2">&quot;let result = pow(2, 0.5)&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;2*5 + 1&quot;</span><span class="p">,</span> <span class="s2">&quot;let result = 2 * 5 + 1&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;1.3e-3&quot;</span><span class="p">,</span> <span class="s2">&quot;let result = 1.3 * pow(10, -3)&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;2**5&quot;</span><span class="p">,</span> <span class="s2">&quot;let result = pow(2, 5)&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;calculate log of 2&quot;</span><span class="p">,</span> <span class="s2">&quot;let result = log2(2)&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;set the value of result to the string hello&quot;</span><span class="p">,</span> <span class="s1">&#39;let result = &quot;hello&quot;;&#39;</span><span class="p">),</span>
+    <span class="p">(</span>
+        <span class="s2">&quot;every day i eat 3 donuts. how many donuts do i eat during the week&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;let days_in_week = 7; let result = days_in_week * 3;&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>But before we can feed them into the chain, we need to convert them into an abstract syntax tree (ast):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kork.parser</span> <span class="kn">import</span> <span class="n">parse</span>
+
+<span class="n">examples_in_ast</span> <span class="o">=</span> <span class="p">[(</span><span class="n">query</span><span class="p">,</span> <span class="n">parse</span><span class="p">(</span><span class="n">code</span><span class="p">))</span> <span class="k">for</span> <span class="n">query</span><span class="p">,</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">examples</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now the first example is composed of a 2-tuple of query and a corresponding program expressed in <code class="docutils literal notranslate"><span class="pre">Kork</span></code> AST.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">examples_in_ast</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;calculate the sqrt of 2&#39;,
+ Program(stmts=(VarDecl(name=&#39;result&#39;, value=FunctionCall(name=&#39;pow&#39;, args=(Literal(value=2), Literal(value=0.5)))),)))
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="codechain">
+<h2>CodeChain<a class="headerlink" href="#codechain" title="Permalink to this headline">#</a></h2>
+<p>The inputs into the chains will be explained in detail later in the documentation.</p>
+<p>For now, let’s run the code chain and look at the generated prompt and the output from the chain!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;text-davinci-003&quot;</span><span class="p">,</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>
+    <span class="n">frequency_penalty</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">presence_penalty</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">top_p</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">chain</span> <span class="o">=</span> <span class="n">CodeChain</span><span class="o">.</span><span class="n">from_defaults</span><span class="p">(</span>
+    <span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">,</span>
+    <span class="n">examples</span><span class="o">=</span><span class="n">examples_in_ast</span><span class="p">,</span>
+    <span class="n">context</span><span class="o">=</span><span class="n">foreign_functions</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see if we can the LLM to invoke our print function?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">code_result</span> <span class="o">=</span> <span class="n">chain</span><span class="p">(</span>
+    <span class="n">inputs</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;write a program to output a funny sentence about a cat to the screen&quot;</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Invoking a custom user defined function
+</pre></div>
+</div>
+<img alt="_images/4898ee1e589ca733211232736324d1d9df6eab3b7e05a1f0713382030d060fe8.png" src="_images/4898ee1e589ca733211232736324d1d9df6eab3b7e05a1f0713382030d060fe8.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished invoking a custom user defined function
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p>Here’s the code that was written by the LLM.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kork.display</span> <span class="kn">import</span> <span class="n">display_code_result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display_code_result</span><span class="p">(</span><span class="n">code_result</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="s2">&quot;code&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_65019_row0_col0, #T_65019_row0_col1 {
+  text-align: left;
+}
+</style>
+<table id="T_65019">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_65019_level0_col0" class="col_heading level0 col0" >query</th>
+      <th id="T_65019_level0_col1" class="col_heading level0 col1" >code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_65019_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_65019_row0_col0" class="data row0 col0" >write a program to output a<br/>funny sentence about a cat to<br/>the screen</td>
+      <td id="T_65019_row0_col1" class="data row0 col1" ><style>pre { line-height: 125%; }<br/>td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>.output_html .hll { background-color: #ffffcc }<br/>.output_html { background: #f8f8f8; }<br/>.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */<br/>.output_html .err { border: 1px solid #FF0000 } /* Error */<br/>.output_html .k { color: #008000; font-weight: bold } /* Keyword */<br/>.output_html .o { color: #666666 } /* Operator */<br/>.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */<br/>.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */<br/>.output_html .cp { color: #9C6500 } /* Comment.Preproc */<br/>.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */<br/>.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */<br/>.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */<br/>.output_html .gd { color: #A00000 } /* Generic.Deleted */<br/>.output_html .ge { font-style: italic } /* Generic.Emph */<br/>.output_html .gr { color: #E40000 } /* Generic.Error */<br/>.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */<br/>.output_html .gi { color: #008400 } /* Generic.Inserted */<br/>.output_html .go { color: #717171 } /* Generic.Output */<br/>.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */<br/>.output_html .gs { font-weight: bold } /* Generic.Strong */<br/>.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */<br/>.output_html .gt { color: #0044DD } /* Generic.Traceback */<br/>.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */<br/>.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */<br/>.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */<br/>.output_html .kp { color: #008000 } /* Keyword.Pseudo */<br/>.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */<br/>.output_html .kt { color: #B00040 } /* Keyword.Type */<br/>.output_html .m { color: #666666 } /* Literal.Number */<br/>.output_html .s { color: #BA2121 } /* Literal.String */<br/>.output_html .na { color: #687822 } /* Name.Attribute */<br/>.output_html .nb { color: #008000 } /* Name.Builtin */<br/>.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */<br/>.output_html .no { color: #880000 } /* Name.Constant */<br/>.output_html .nd { color: #AA22FF } /* Name.Decorator */<br/>.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */<br/>.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */<br/>.output_html .nf { color: #0000FF } /* Name.Function */<br/>.output_html .nl { color: #767600 } /* Name.Label */<br/>.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */<br/>.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */<br/>.output_html .nv { color: #19177C } /* Name.Variable */<br/>.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */<br/>.output_html .w { color: #bbbbbb } /* Text.Whitespace */<br/>.output_html .mb { color: #666666 } /* Literal.Number.Bin */<br/>.output_html .mf { color: #666666 } /* Literal.Number.Float */<br/>.output_html .mh { color: #666666 } /* Literal.Number.Hex */<br/>.output_html .mi { color: #666666 } /* Literal.Number.Integer */<br/>.output_html .mo { color: #666666 } /* Literal.Number.Oct */<br/>.output_html .sa { color: #BA2121 } /* Literal.String.Affix */<br/>.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */<br/>.output_html .sc { color: #BA2121 } /* Literal.String.Char */<br/>.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */<br/>.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */<br/>.output_html .s2 { color: #BA2121 } /* Literal.String.Double */<br/>.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */<br/>.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */<br/>.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */<br/>.output_html .sx { color: #008000 } /* Literal.String.Other */<br/>.output_html .sr { color: #A45A77 } /* Literal.String.Regex */<br/>.output_html .s1 { color: #BA2121 } /* Literal.String.Single */<br/>.output_html .ss { color: #19177C } /* Literal.String.Symbol */<br/>.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */<br/>.output_html .fm { color: #0000FF } /* Name.Function.Magic */<br/>.output_html .vc { color: #19177C } /* Name.Variable.Class */<br/>.output_html .vg { color: #19177C } /* Name.Variable.Global */<br/>.output_html .vi { color: #19177C } /* Name.Variable.Instance */<br/>.output_html .vm { color: #19177C } /* Name.Variable.Magic */<br/>.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="s2">&quot;Cats are so funny, they make me LOL!&quot;</span><span class="p">)</span><br/></pre></div></td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The LLM successfully invoked a custom user function called <code class="docutils literal notranslate"><span class="pre">foo</span></code> which printed to the screen. 🤔</p>
+<p>Feel free to experiment and create functions that create images, play sounds etc.</p>
+<p>The chain will be able to invoke any functions that you provide it.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The LLM may return <code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">result</span> <span class="pre">=</span> <span class="pre">0</span></code> at the end of the program.</p>
+<p>The examples and prompt bias it to end in a variable declaration statement.</p>
+<p>The prompt and examples can be customized to change this behavior.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>You may see failures even in simple tasks like this one. See the guidelines section.</p>
+</div>
+</section>
+<section id="the-prompt">
+<h2>The prompt<a class="headerlink" href="#the-prompt" title="Permalink to this headline">#</a></h2>
+<p>Let’s turn on verbose mode and take a look at the prompt that gets generated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langchain</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And let’s try a more complex sentence.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;An ecoli cell doubles every 30 mins in a test tube. How long will it take 1 cell to become 16 cells? Use variable declarations and function invocations.&quot;</span>
+
+<span class="n">code_result</span> <span class="o">=</span> <span class="n">chain</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="n">query</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">&gt; Entering new LLMChain chain...</span>
+Prompt after formatting:
+<span class=" -Color -Color-Bold -Color-Bold-Green">You are programming in a language called &quot;😼&quot;.</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">You are an expert programmer and must follow the instructions below exactly.</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Your goal is to translate a user query into a corresponding and valid 😼</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">program.</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">You have access to the following external functions:</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">```😼</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">extern fn foo(what_to_print: str) -&gt; str // A function that something to the screen</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">extern fn pow(x: Any, y: Any) -&gt; Any // Return x**y (x to the power of y).</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">extern fn log2(x: Any) -&gt; Any // Return the base 2 logarithm of x.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">extern fn log10(x: Any) -&gt; Any // Return the base 10 logarithm of x.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">extern fn sqrt(x: Any) -&gt; Any // Return the square root of x.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Do not assume that any other functions except for the ones listed above exist.</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Wrap the program in &lt;code&gt; and &lt;/code&gt; tags.</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Store the solution to the query in a variable called &quot;result&quot;.</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Here is a sample valid program:</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">&lt;code&gt;</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">var x = 1 # Assign 1 to the variable x</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">var result = 1 + 2 # Calculate the sum of 1 + 2 and assign to result</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">var result = x # Assign the value of x to result</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Guidelines:</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">- Do not use operators, instead invoke appropriate external functions.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">- Do not declare functions, do not use loops, do not use conditionals.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">- Solve the problem only using variable declarations and function invocations.</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Begin!</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">calculate the sqrt of 2</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output: &lt;code&gt;var result = pow(2, 0.5)&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">2*5 + 1</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output: &lt;code&gt;var result = 2 * 5 + 1&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">1.3e-3</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output: &lt;code&gt;var result = 1.3 * pow(10, -3)&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">2**5</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output: &lt;code&gt;var result = pow(2, 5)&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">calculate log of 2</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output: &lt;code&gt;var result = log2(2)&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">set the value of result to the string hello</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output: &lt;code&gt;var result = &quot;hello&quot;&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">every day i eat 3 donuts. how many donuts do i eat during the week</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output: &lt;code&gt;var days_in_week = 7</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">var result = days_in_week * 3&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">An ecoli cell doubles every 30 mins in a test tube. How long will it take 1 cell to become 16 cells? Use variable declarations and function invocations.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output:</span>
+
+<span class=" -Color -Color-Bold">&gt; Finished chain.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The llm output was:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display_code_result</span><span class="p">(</span><span class="n">code_result</span><span class="p">,</span> <span class="n">expected_answer</span><span class="o">=</span><span class="mf">120.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_03237_row0_col0, #T_03237_row0_col1, #T_03237_row0_col2, #T_03237_row0_col3, #T_03237_row0_col4, #T_03237_row0_col5, #T_03237_row0_col6 {
+  text-align: left;
+}
+</style>
+<table id="T_03237">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_03237_level0_col0" class="col_heading level0 col0" >query</th>
+      <th id="T_03237_level0_col1" class="col_heading level0 col1" >code</th>
+      <th id="T_03237_level0_col2" class="col_heading level0 col2" >result</th>
+      <th id="T_03237_level0_col3" class="col_heading level0 col3" >expected</th>
+      <th id="T_03237_level0_col4" class="col_heading level0 col4" >correct</th>
+      <th id="T_03237_level0_col5" class="col_heading level0 col5" >errors</th>
+      <th id="T_03237_level0_col6" class="col_heading level0 col6" >raw</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_03237_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_03237_row0_col0" class="data row0 col0" >An ecoli cell doubles every 30<br/>mins in a test tube. How long<br/>will it take 1 cell to become<br/>16 cells? Use variable<br/>declarations and function<br/>invocations.</td>
+      <td id="T_03237_row0_col1" class="data row0 col1" ><style>pre { line-height: 125%; }<br/>td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>.output_html .hll { background-color: #ffffcc }<br/>.output_html { background: #f8f8f8; }<br/>.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */<br/>.output_html .err { border: 1px solid #FF0000 } /* Error */<br/>.output_html .k { color: #008000; font-weight: bold } /* Keyword */<br/>.output_html .o { color: #666666 } /* Operator */<br/>.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */<br/>.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */<br/>.output_html .cp { color: #9C6500 } /* Comment.Preproc */<br/>.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */<br/>.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */<br/>.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */<br/>.output_html .gd { color: #A00000 } /* Generic.Deleted */<br/>.output_html .ge { font-style: italic } /* Generic.Emph */<br/>.output_html .gr { color: #E40000 } /* Generic.Error */<br/>.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */<br/>.output_html .gi { color: #008400 } /* Generic.Inserted */<br/>.output_html .go { color: #717171 } /* Generic.Output */<br/>.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */<br/>.output_html .gs { font-weight: bold } /* Generic.Strong */<br/>.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */<br/>.output_html .gt { color: #0044DD } /* Generic.Traceback */<br/>.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */<br/>.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */<br/>.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */<br/>.output_html .kp { color: #008000 } /* Keyword.Pseudo */<br/>.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */<br/>.output_html .kt { color: #B00040 } /* Keyword.Type */<br/>.output_html .m { color: #666666 } /* Literal.Number */<br/>.output_html .s { color: #BA2121 } /* Literal.String */<br/>.output_html .na { color: #687822 } /* Name.Attribute */<br/>.output_html .nb { color: #008000 } /* Name.Builtin */<br/>.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */<br/>.output_html .no { color: #880000 } /* Name.Constant */<br/>.output_html .nd { color: #AA22FF } /* Name.Decorator */<br/>.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */<br/>.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */<br/>.output_html .nf { color: #0000FF } /* Name.Function */<br/>.output_html .nl { color: #767600 } /* Name.Label */<br/>.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */<br/>.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */<br/>.output_html .nv { color: #19177C } /* Name.Variable */<br/>.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */<br/>.output_html .w { color: #bbbbbb } /* Text.Whitespace */<br/>.output_html .mb { color: #666666 } /* Literal.Number.Bin */<br/>.output_html .mf { color: #666666 } /* Literal.Number.Float */<br/>.output_html .mh { color: #666666 } /* Literal.Number.Hex */<br/>.output_html .mi { color: #666666 } /* Literal.Number.Integer */<br/>.output_html .mo { color: #666666 } /* Literal.Number.Oct */<br/>.output_html .sa { color: #BA2121 } /* Literal.String.Affix */<br/>.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */<br/>.output_html .sc { color: #BA2121 } /* Literal.String.Char */<br/>.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */<br/>.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */<br/>.output_html .s2 { color: #BA2121 } /* Literal.String.Double */<br/>.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */<br/>.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */<br/>.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */<br/>.output_html .sx { color: #008000 } /* Literal.String.Other */<br/>.output_html .sr { color: #A45A77 } /* Literal.String.Regex */<br/>.output_html .s1 { color: #BA2121 } /* Literal.String.Single */<br/>.output_html .ss { color: #19177C } /* Literal.String.Symbol */<br/>.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */<br/>.output_html .fm { color: #0000FF } /* Name.Function.Magic */<br/>.output_html .vc { color: #19177C } /* Name.Variable.Class */<br/>.output_html .vg { color: #19177C } /* Name.Variable.Global */<br/>.output_html .vi { color: #19177C } /* Name.Variable.Instance */<br/>.output_html .vm { color: #19177C } /* Name.Variable.Magic */<br/>.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">cell_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><br/><span class="k">var</span><span class="w"> </span><span class="n">target_cell_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span><br/><span class="k">var</span><span class="w"> </span><span class="n">doubling_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><br/><span class="k">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">log2</span><span class="p">(</span><span class="n">target_cell_count</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">cell_count</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">doubling_time</span><br/></pre></div></td>
+      <td id="T_03237_row0_col2" class="data row0 col2" >120.0</td>
+      <td id="T_03237_row0_col3" class="data row0 col3" >120.0</td>
+      <td id="T_03237_row0_col4" class="data row0 col4" >✅</td>
+      <td id="T_03237_row0_col5" class="data row0 col5" >[]</td>
+      <td id="T_03237_row0_col6" class="data row0 col6" > &lt;code&gt;var cell_count = 1<br/>var target_cell_count = 16<br/>var doubling_time = 30<br/>var result = log2(target_cell_count / cell_count) * doubling_time&lt;/code&gt;</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="the-environment">
+<h2>The Environment<a class="headerlink" href="#the-environment" title="Permalink to this headline">#</a></h2>
+<p>After running the chain, we have access to state of the environment after the interpreter finished running the code.</p>
+<p>We can fetch the <code class="docutils literal notranslate"><span class="pre">result</span></code> variable from the environment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">code_result</span><span class="p">[</span><span class="s2">&quot;environment&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kork.environment.Environment
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result of the calculation for the e-coli cell is stored in the <code class="docutils literal notranslate"><span class="pre">result</span></code> symbol</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">code_result</span><span class="p">[</span><span class="s2">&quot;environment&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get_symbol</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="relativistic-kinetic-energy">
+<h2>Relativistic Kinetic Energy<a class="headerlink" href="#relativistic-kinetic-energy" title="Permalink to this headline">#</a></h2>
+<p>We can try to carry out a more complex physics calculation.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>LLMs can struggle with longer and more complex tasks.</p>
+<p>Guidelines:</p>
+<ol class="arabic simple">
+<li><p>Use a better LLM</p></li>
+<li><p>Customize the prompt for your task</p></li>
+<li><p>Provide examples</p></li>
+<li><p>Provide foreign functions that are simple and include type annotations and short doc-strings.</p></li>
+</ol>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><code class="docutils literal notranslate"><span class="pre">Kork</span></code> is very much a work in progress.</p>
+<p>It’s not yet doing a 2nd pass with an LLM to help correct bugs in the generated program, which
+will likley help improve results.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">Let&#39;s calculate the kinetic energy of a relativistic electron moving at 0.9999c in MeV. </span>
+<span class="s2">First list all relevant physical constants and conver them into an appropriate units.</span>
+<span class="s2">Now, calculate the lorentz factor.</span>
+<span class="s2">Then subtract one from it, and multiply the result by the rest mass of an electron in MeV.</span>
+<span class="s2">Make sure to use the listed foreign functions and no binary arithemtic operators.&quot;&quot;&quot;</span>
+
+<span class="n">code_result</span> <span class="o">=</span> <span class="n">chain</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="n">query</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">&gt; Entering new LLMChain chain...</span>
+Prompt after formatting:
+<span class=" -Color -Color-Bold -Color-Bold-Green">You are programming in a language called &quot;😼&quot;.</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">You are an expert programmer and must follow the instructions below exactly.</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Your goal is to translate a user query into a corresponding and valid 😼</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">program.</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">You have access to the following external functions:</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">```😼</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">extern fn foo(what_to_print: str) -&gt; str // A function that something to the screen</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">extern fn pow(x: Any, y: Any) -&gt; Any // Return x**y (x to the power of y).</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">extern fn log2(x: Any) -&gt; Any // Return the base 2 logarithm of x.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">extern fn log10(x: Any) -&gt; Any // Return the base 10 logarithm of x.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">extern fn sqrt(x: Any) -&gt; Any // Return the square root of x.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Do not assume that any other functions except for the ones listed above exist.</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Wrap the program in &lt;code&gt; and &lt;/code&gt; tags.</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Store the solution to the query in a variable called &quot;result&quot;.</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Here is a sample valid program:</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">&lt;code&gt;</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">var x = 1 # Assign 1 to the variable x</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">var result = 1 + 2 # Calculate the sum of 1 + 2 and assign to result</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">var result = x # Assign the value of x to result</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Guidelines:</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">- Do not use operators, instead invoke appropriate external functions.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">- Do not declare functions, do not use loops, do not use conditionals.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">- Solve the problem only using variable declarations and function invocations.</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Begin!</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">calculate the sqrt of 2</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output: &lt;code&gt;var result = pow(2, 0.5)&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">2*5 + 1</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output: &lt;code&gt;var result = 2 * 5 + 1&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">1.3e-3</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output: &lt;code&gt;var result = 1.3 * pow(10, -3)&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">2**5</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output: &lt;code&gt;var result = pow(2, 5)&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">calculate log of 2</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output: &lt;code&gt;var result = log2(2)&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">set the value of result to the string hello</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output: &lt;code&gt;var result = &quot;hello&quot;&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">every day i eat 3 donuts. how many donuts do i eat during the week</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output: &lt;code&gt;var days_in_week = 7</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">var result = days_in_week * 3&lt;/code&gt;</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Input: ```text</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">Let&#39;s calculate the kinetic energy of a relativistic electron moving at 0.9999c in MeV. </span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">First list all relevant physical constants and conver them into an appropriate units.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">Now, calculate the lorentz factor.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">Then subtract one from it, and multiply the result by the rest mass of an electron in MeV.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">Make sure to use the listed foreign functions and no binary arithemtic operators.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">```</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">Output:</span>
+
+<span class=" -Color -Color-Bold">&gt; Finished chain.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expected_answer</span> <span class="o">=</span> <span class="mf">0.511</span> <span class="o">*</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.9999</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Success rate of this calculation is higher than 5%, but definitely lower than 80%. Huge variation due to underlying LLM!</p>
+<p>This is a cherry picked run when things work as expected. A 2nd pass with an LLM may be needed to get more robust.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display_code_result</span><span class="p">(</span><span class="n">code_result</span><span class="p">,</span> <span class="n">expected_answer</span><span class="o">=</span><span class="n">expected_answer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_6d48c_row0_col0, #T_6d48c_row0_col1, #T_6d48c_row0_col2, #T_6d48c_row0_col3, #T_6d48c_row0_col4, #T_6d48c_row0_col5, #T_6d48c_row0_col6 {
+  text-align: left;
+}
+</style>
+<table id="T_6d48c">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_6d48c_level0_col0" class="col_heading level0 col0" >query</th>
+      <th id="T_6d48c_level0_col1" class="col_heading level0 col1" >code</th>
+      <th id="T_6d48c_level0_col2" class="col_heading level0 col2" >result</th>
+      <th id="T_6d48c_level0_col3" class="col_heading level0 col3" >expected</th>
+      <th id="T_6d48c_level0_col4" class="col_heading level0 col4" >correct</th>
+      <th id="T_6d48c_level0_col5" class="col_heading level0 col5" >errors</th>
+      <th id="T_6d48c_level0_col6" class="col_heading level0 col6" >raw</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_6d48c_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_6d48c_row0_col0" class="data row0 col0" >Let&#x27;s calculate the<br/>kinetic energy of a<br/>relativistic electron moving<br/>at 0.9999c in MeV.  First list<br/>all relevant physical<br/>constants and conver them into<br/>an appropriate units. Now,<br/>calculate the lorentz factor.<br/>Then subtract one from it, and<br/>multiply the result by the<br/>rest mass of an electron in<br/>MeV. Make sure to use the<br/>listed foreign functions and<br/>no binary arithemtic<br/>operators.</td>
+      <td id="T_6d48c_row0_col1" class="data row0 col1" ><style>pre { line-height: 125%; }<br/>td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }<br/>td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }<br/>.output_html .hll { background-color: #ffffcc }<br/>.output_html { background: #f8f8f8; }<br/>.output_html .c { color: #3D7B7B; font-style: italic } /* Comment */<br/>.output_html .err { border: 1px solid #FF0000 } /* Error */<br/>.output_html .k { color: #008000; font-weight: bold } /* Keyword */<br/>.output_html .o { color: #666666 } /* Operator */<br/>.output_html .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */<br/>.output_html .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */<br/>.output_html .cp { color: #9C6500 } /* Comment.Preproc */<br/>.output_html .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */<br/>.output_html .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */<br/>.output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */<br/>.output_html .gd { color: #A00000 } /* Generic.Deleted */<br/>.output_html .ge { font-style: italic } /* Generic.Emph */<br/>.output_html .gr { color: #E40000 } /* Generic.Error */<br/>.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */<br/>.output_html .gi { color: #008400 } /* Generic.Inserted */<br/>.output_html .go { color: #717171 } /* Generic.Output */<br/>.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */<br/>.output_html .gs { font-weight: bold } /* Generic.Strong */<br/>.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */<br/>.output_html .gt { color: #0044DD } /* Generic.Traceback */<br/>.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */<br/>.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */<br/>.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */<br/>.output_html .kp { color: #008000 } /* Keyword.Pseudo */<br/>.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */<br/>.output_html .kt { color: #B00040 } /* Keyword.Type */<br/>.output_html .m { color: #666666 } /* Literal.Number */<br/>.output_html .s { color: #BA2121 } /* Literal.String */<br/>.output_html .na { color: #687822 } /* Name.Attribute */<br/>.output_html .nb { color: #008000 } /* Name.Builtin */<br/>.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */<br/>.output_html .no { color: #880000 } /* Name.Constant */<br/>.output_html .nd { color: #AA22FF } /* Name.Decorator */<br/>.output_html .ni { color: #717171; font-weight: bold } /* Name.Entity */<br/>.output_html .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */<br/>.output_html .nf { color: #0000FF } /* Name.Function */<br/>.output_html .nl { color: #767600 } /* Name.Label */<br/>.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */<br/>.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */<br/>.output_html .nv { color: #19177C } /* Name.Variable */<br/>.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */<br/>.output_html .w { color: #bbbbbb } /* Text.Whitespace */<br/>.output_html .mb { color: #666666 } /* Literal.Number.Bin */<br/>.output_html .mf { color: #666666 } /* Literal.Number.Float */<br/>.output_html .mh { color: #666666 } /* Literal.Number.Hex */<br/>.output_html .mi { color: #666666 } /* Literal.Number.Integer */<br/>.output_html .mo { color: #666666 } /* Literal.Number.Oct */<br/>.output_html .sa { color: #BA2121 } /* Literal.String.Affix */<br/>.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */<br/>.output_html .sc { color: #BA2121 } /* Literal.String.Char */<br/>.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */<br/>.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */<br/>.output_html .s2 { color: #BA2121 } /* Literal.String.Double */<br/>.output_html .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */<br/>.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */<br/>.output_html .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */<br/>.output_html .sx { color: #008000 } /* Literal.String.Other */<br/>.output_html .sr { color: #A45A77 } /* Literal.String.Regex */<br/>.output_html .s1 { color: #BA2121 } /* Literal.String.Single */<br/>.output_html .ss { color: #19177C } /* Literal.String.Symbol */<br/>.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */<br/>.output_html .fm { color: #0000FF } /* Name.Function.Magic */<br/>.output_html .vc { color: #19177C } /* Name.Variable.Class */<br/>.output_html .vg { color: #19177C } /* Name.Variable.Global */<br/>.output_html .vi { color: #19177C } /* Name.Variable.Instance */<br/>.output_html .vm { color: #19177C } /* Name.Variable.Magic */<br/>.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">299792458</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Speed</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">light</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">m</span><span class="o">/</span><span class="n">s</span><br/><span class="k">var</span><span class="w"> </span><span class="n">rest_mass_electron</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.511</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Rest</span><span class="w"> </span><span class="n">mass</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">electron</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">MeV</span><br/><span class="k">var</span><span class="w"> </span><span class="n">speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.9999</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Speed</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">electron</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">m</span><span class="o">/</span><span class="n">s</span><br/><span class="k">var</span><span class="w"> </span><span class="n">lorentz_factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">pow</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">pow</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Calculate</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">lorentz</span><span class="w"> </span><span class="n">factor</span><br/><span class="k">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">lorentz_factor</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rest_mass_electron</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Calculate</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">kinetic</span><span class="w"> </span><span class="n">energy</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">MeV</span><br/></pre></div></td>
+      <td id="T_6d48c_row0_col2" class="data row0 col2" >35.62305988140826</td>
+      <td id="T_6d48c_row0_col3" class="data row0 col3" >35.62305988142832</td>
+      <td id="T_6d48c_row0_col4" class="data row0 col4" >✅</td>
+      <td id="T_6d48c_row0_col5" class="data row0 col5" >[]</td>
+      <td id="T_6d48c_row0_col6" class="data row0 col6" > &lt;code&gt;var c = 299792458 // Speed of light in m/s<br/>var rest_mass_electron = 0.511 // Rest mass of an electron in MeV<br/>var speed = 0.9999 * c // Speed of the electron in m/s<br/>var lorentz_factor = 1 / sqrt(1 - pow(speed, 2) / pow(c, 2)) // Calculate the lorentz factor<br/>var result = (lorentz_factor - 1) * rest_mass_electron // Calculate the kinetic energy in MeV&lt;/code&gt;</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="calculations-with-llms">
+<h2>Calculations with LLMs<a class="headerlink" href="#calculations-with-llms" title="Permalink to this headline">#</a></h2>
+<p>As LLMs get better and better they will better approximate the correct answer (without having to even specify an algorithm).</p>
+<p>You can try this exercise with GPT-4 or chat gpt. With an appropriate prompt and model, the results can look pretty reasonable!</p>
+<p>Alternatively, you can compare the results with langchain math chains!</p>
+<p>As an experiment, you could use an LLM to generate a calculation plan for a given scientific question and then use a code chain to translate the instructions into a program.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Similarily to humans it looks like the LLMs can struggle a bit with unit conversions. 😹</p>
+<p>But the knowledge is there, so maybe we just need to be clever enough!</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
+        <span class="n">prompts</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;What is the relativistic kinetic energy of an electron moving at 0.999999 c expressed in MeV?&quot;</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">generations</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">text</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The relativistic kinetic energy of an electron moving at 0.999999 c is 7.979 MeV.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
+        <span class="n">prompts</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;What is the relativistic kinetic energy of an electron moving at 0.9999 c expressed in MeV explain step by step calculation?&quot;</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">generations</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">text</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The relativistic kinetic energy of an electron moving at 0.9999 c can be calculated using the equation:
+
+KE = (γ - 1)mc2
+
+Where γ is the Lorentz factor, m is the mass of the electron, and c is the speed of light.
+
+Step 1: Calculate the Lorentz factor
+
+γ = 1/√(1 - v2/c2)
+
+γ = 1/√(1 - (0.9999)2)
+
+γ = 1/√(1 - 0.99980001)
+
+γ = 1/√(0.00019999)
+
+γ = 1/0.0141
+
+γ = 70.7107
+
+Step 2: Calculate the relativistic kinetic energy
+
+KE = (γ - 1)mc2
+
+KE = (70.7107 - 1)mc2
+
+KE = 69.7107mc2
+
+KE = 69.7107 x (9.109 x 10-31 kg) x (3 x 108 m/s)2
+
+KE = 1.945 x 10-13 J
+
+Step 3: Convert Joules to MeV
+
+1 MeV = 1.602 x 10-13 J
+
+KE = 1.945 x 10-13 J / 1.602 x 10-13 J/MeV
+
+KE = 1.21 MeV
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
+        <span class="n">prompts</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;Generate step by step instructions to calculate the relativistic kinetic energy of an electron moving at 0.9999c?&quot;</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">generations</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">text</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. Determine the speed of the electron in terms of the speed of light (c). In this case, the electron is moving at 0.9999c.
+
+2. Calculate the relativistic factor (γ) using the equation γ = 1/√(1-v2/c2).
+
+3. Calculate the relativistic kinetic energy (Ek) using the equation Ek = γmc2 - mc2.
+
+4. Substitute the values for γ and c into the equation and solve for Ek.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="language.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Language 😼</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foreign-functions">Foreign Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#codechain">CodeChain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-prompt">The prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-environment">The Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relativistic-kinetic-energy">Relativistic Kinetic Energy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-with-llms">Calculations with LLMs</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Langchain AI
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, Langchain AI.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

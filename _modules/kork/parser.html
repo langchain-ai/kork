@@ -1,0 +1,575 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kork.parser &#8212; Kork 0.0.2</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kork/parser';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/parrot.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/parrot.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../language.html">The Language 😼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ast.html">Abstract Syntax Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../prompt.html">The Prompt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../retrievers.html">Retrievers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../calculator.html">Calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../query_analyzer.html">Query Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/image_manipulation.html">Image Manipulation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/langchain-ai/kork" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for kork.parser</h1><div class="highlight"><pre>
+<span></span><span class="c1"># type:ignore[no-untyped-def]</span>
+<span class="sd">&quot;&quot;&quot;Kork&#39;s default AST parser.</span>
+
+<span class="sd">Kork uses Lark to parse the AST. The grammar follows closely</span>
+<span class="sd">the one used in Crafting Interpreters for the Lox Programming Language.</span>
+
+<span class="sd">https://craftinginterpreters.com/appendix-i.html#expressions</span>
+
+<span class="sd">The grammar and parser were clobbered together in a few hours of work.</span>
+
+<span class="sd">If you deeply care about language design, please forgive any transgressions,</span>
+<span class="sd">and feel free to help improve the grammar/parser/interpreter.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">cast</span>
+
+<span class="kn">from</span> <span class="nn">lark</span> <span class="kn">import</span> <span class="n">Lark</span><span class="p">,</span> <span class="n">Transformer</span><span class="p">,</span> <span class="n">v_args</span>
+
+<span class="kn">from</span> <span class="nn">kork</span> <span class="kn">import</span> <span class="n">ast</span>
+
+<span class="n">GRAMMAR</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    program: statement+</span>
+
+<span class="s2">    statement: function_decl</span>
+<span class="s2">              | extern_function_decl</span>
+<span class="s2">              | var_decl</span>
+<span class="s2">              | expr</span>
+
+<span class="s2">    function_decl: &quot;fn&quot; CNAME &quot;(&quot; [params] &quot;)&quot; &quot;-&gt;&quot; type block</span>
+<span class="s2">    extern_function_decl: &quot;extern&quot; &quot;fn&quot; CNAME &quot;(&quot; [params] &quot;)&quot; &quot;-&gt;&quot; type</span>
+<span class="s2">    var_decl: (&quot;let&quot; | &quot;const&quot; | &quot;var&quot;) CNAME &quot;=&quot; expr [&quot;;&quot;]</span>
+<span class="s2">    params: param (&quot;,&quot; param)*</span>
+<span class="s2">    param: CNAME &quot;:&quot; type</span>
+<span class="s2">    type: CNAME</span>
+<span class="s2">    </span>
+<span class="s2">    block: &quot;{&quot; [statement+] &quot;}&quot;</span>
+<span class="s2">    </span>
+<span class="s2">    ?expr: assignment</span>
+<span class="s2">    </span>
+<span class="s2">    ?assignment: CNAME &quot;=&quot; expr [&quot;;&quot;] -&gt; variable_assign</span>
+<span class="s2">        | term</span>
+<span class="s2">        </span>
+<span class="s2">    !?term: term &quot;+&quot; factor -&gt; binary</span>
+<span class="s2">        | term &quot;-&quot; factor -&gt; binary</span>
+<span class="s2">        | factor</span>
+<span class="s2">        </span>
+<span class="s2">    !?factor: factor &quot;*&quot; unary -&gt; binary</span>
+<span class="s2">        | factor &quot;/&quot; unary -&gt; binary</span>
+<span class="s2">        | factor &quot;%&quot; unary -&gt; binary</span>
+<span class="s2">        | unary</span>
+<span class="s2">        </span>
+<span class="s2">    !?unary: &quot;-&quot; unary -&gt; unary_r</span>
+<span class="s2">        | &quot;+&quot; unary -&gt; unary_r</span>
+<span class="s2">        | power</span>
+<span class="s2">        </span>
+<span class="s2">    !?power: call &quot;**&quot; unary -&gt; binary</span>
+<span class="s2">        | call &quot;^&quot; unary -&gt; binary</span>
+<span class="s2">        | call</span>
+<span class="s2">    </span>
+<span class="s2">    ?call: CNAME &quot;(&quot; [args] &quot;)&quot; -&gt; function_call</span>
+<span class="s2">        | primary</span>
+<span class="s2">    </span>
+<span class="s2">    ?primary: numbers</span>
+<span class="s2">        | list</span>
+<span class="s2">        | string</span>
+<span class="s2">        | &quot;true&quot; -&gt; true</span>
+<span class="s2">        | &quot;false&quot; -&gt; false</span>
+<span class="s2">        | &quot;null&quot; -&gt; null</span>
+<span class="s2">        | &quot;(&quot; expr &quot;)&quot; -&gt; group</span>
+<span class="s2">        | CNAME -&gt; identifier</span>
+<span class="s2">        </span>
+<span class="s2">    ?numbers: SIGNED_NUMBER (&quot;E&quot;|&quot;e&quot;) SIGNED_NUMBER -&gt; scientific</span>
+<span class="s2">        | SIGNED_NUMBER -&gt; number</span>
+<span class="s2">        </span>
+<span class="s2">    args: expr (&quot;,&quot; expr)*</span>
+<span class="s2">    string: ESCAPED_STRING</span>
+<span class="s2">    list: &quot;[&quot; [args] &quot;]&quot;</span>
+
+<span class="s2">    </span><span class="si">%i</span><span class="s2">mport common.CNAME</span>
+<span class="s2">    </span><span class="si">%i</span><span class="s2">mport common.SIGNED_NUMBER</span>
+<span class="s2">    </span><span class="si">%i</span><span class="s2">mport common.ESCAPED_STRING</span>
+<span class="s2">    </span><span class="si">%i</span><span class="s2">mport common.WS</span>
+<span class="s2">    </span><span class="si">%i</span><span class="s2">gnore WS</span>
+<span class="s2">    </span><span class="si">%i</span><span class="s2">gnore /#.*/</span>
+<span class="s2">    </span><span class="si">%i</span><span class="s2">gnore /\/\/.*/</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+
+<span class="c1"># mypy: ignore-errors</span>
+
+
+<div class="viewcode-block" id="AstParser"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser">[docs]</a><span class="nd">@v_args</span><span class="p">(</span><span class="n">inline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">AstParser</span><span class="p">(</span><span class="n">Transformer</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An ast parser for the given language.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AstParser.program"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.program">[docs]</a>    <span class="k">def</span> <span class="nf">program</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">items</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Program</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a program from the given statements.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">Program</span><span class="p">(</span><span class="n">stmts</span><span class="o">=</span><span class="n">items</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.function_decl"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.function_decl">[docs]</a>    <span class="k">def</span> <span class="nf">function_decl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">return_type</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">FunctionDef</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Function declaration from the given name, params, return type and block.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">FunctionDef</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">),</span>
+            <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
+            <span class="n">return_type</span><span class="o">=</span><span class="n">return_type</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">block</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.extern_function_decl"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.extern_function_decl">[docs]</a>    <span class="k">def</span> <span class="nf">extern_function_decl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">ExternFunctionDef</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Extern function declaration from the given name, params and return type.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">ExternFunctionDef</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">),</span>
+            <span class="n">params</span><span class="o">=</span><span class="n">params</span> <span class="ow">or</span> <span class="n">ast</span><span class="o">.</span><span class="n">ParamList</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">[]),</span>
+            <span class="n">return_type</span><span class="o">=</span><span class="n">return_type</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.statement"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.statement">[docs]</a>    <span class="k">def</span> <span class="nf">statement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Stmt</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a statement from the given item.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">item</span></div>
+
+<div class="viewcode-block" id="AstParser.var_decl"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.var_decl">[docs]</a>    <span class="k">def</span> <span class="nf">var_decl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">VarDecl</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Variable declaration from the given name and value.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">VarDecl</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">),</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.params"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.params">[docs]</a>    <span class="k">def</span> <span class="nf">params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">items</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">ParamList</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a param list from the given items.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">ParamList</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">items</span> <span class="ow">or</span> <span class="p">[])</span></div>
+
+<div class="viewcode-block" id="AstParser.unary_r"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.unary_r">[docs]</a>    <span class="k">def</span> <span class="nf">unary_r</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Unary</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a unary from the given operator and left.&quot;&quot;&quot;</span>
+        <span class="n">op</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">operator</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">op</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">}:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown operator: </span><span class="si">{</span><span class="n">op</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">Unary</span><span class="p">(</span><span class="n">operator</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">operator</span><span class="p">),</span> <span class="n">right</span><span class="o">=</span><span class="n">right</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.binary"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.binary">[docs]</a>    <span class="k">def</span> <span class="nf">binary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">operator</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Binary</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a binary from the given left, operator and right.&quot;&quot;&quot;</span>
+        <span class="n">op</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">operator</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">op</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="s2">&quot;**&quot;</span><span class="p">,</span> <span class="s2">&quot;//&quot;</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">,</span> <span class="s2">&quot;^&quot;</span><span class="p">}:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown operator: </span><span class="si">{</span><span class="n">op</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">Binary</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">left</span><span class="p">,</span> <span class="n">operator</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">operator</span><span class="p">),</span> <span class="n">right</span><span class="o">=</span><span class="n">right</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.param"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.param">[docs]</a>    <span class="k">def</span> <span class="nf">param</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">type_</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Param</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a param from the given name and type.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">Param</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">),</span>
+            <span class="n">type_</span><span class="o">=</span><span class="n">type_</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.type"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.type">[docs]</a>    <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a type from the given name.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.block"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.block">[docs]</a>    <span class="k">def</span> <span class="nf">block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">statements</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a block from the given statements.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">statements</span> <span class="ow">or</span> <span class="p">[]</span></div>
+
+<div class="viewcode-block" id="AstParser.group"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.group">[docs]</a>    <span class="k">def</span> <span class="nf">group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Grouping</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a group from the given expression.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">Grouping</span><span class="p">(</span><span class="n">expr</span><span class="o">=</span><span class="n">expr</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.function_call"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.function_call">[docs]</a>    <span class="k">def</span> <span class="nf">function_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">FunctionCall</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a function call from the given name and args.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">FunctionCall</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span> <span class="ow">or</span> <span class="p">[])</span></div>
+
+<div class="viewcode-block" id="AstParser.identifier"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.identifier">[docs]</a>    <span class="k">def</span> <span class="nf">identifier</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Variable</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a variable reference from the given name.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">),</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.variable_assign"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.variable_assign">[docs]</a>    <span class="k">def</span> <span class="nf">variable_assign</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Assign</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a variable assignment from the given name and value.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">Assign</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">),</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.expr"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.expr">[docs]</a>    <span class="k">def</span> <span class="nf">expr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Expr</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create an expression from the given item.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">item</span></div>
+
+<div class="viewcode-block" id="AstParser.args"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.args">[docs]</a>    <span class="k">def</span> <span class="nf">args</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">items</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create an argument list for a function from the given items.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">items</span> <span class="ow">or</span> <span class="p">[]</span></div>
+
+<div class="viewcode-block" id="AstParser.list"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.list">[docs]</a>    <span class="k">def</span> <span class="nf">list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">List_</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a list literal from the given items.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">List_</span><span class="p">(</span>
+            <span class="n">elements</span><span class="o">=</span><span class="n">items</span> <span class="ow">or</span> <span class="p">[],</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.true"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.true">[docs]</a>    <span class="k">def</span> <span class="nf">true</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Literal</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a true literal.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">Literal</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.false"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.false">[docs]</a>    <span class="k">def</span> <span class="nf">false</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Literal</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a false literal.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">Literal</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.null"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.null">[docs]</a>    <span class="k">def</span> <span class="nf">null</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Literal</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a null literal.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">Literal</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.number"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.number">[docs]</a>    <span class="k">def</span> <span class="nf">number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Literal</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">Literal</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">Literal</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">item</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="AstParser.scientific"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.scientific">[docs]</a>    <span class="k">def</span> <span class="nf">scientific</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coefficient</span><span class="p">,</span> <span class="n">exponent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Literal</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">Literal</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">coefficient</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="n">exponent</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AstParser.string"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.AstParser.string">[docs]</a>    <span class="k">def</span> <span class="nf">string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Literal</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">Literal</span><span class="p">(</span>
+            <span class="n">value</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
+        <span class="p">)</span></div></div>
+
+
+<span class="n">ast_parser</span> <span class="o">=</span> <span class="n">Lark</span><span class="p">(</span><span class="n">GRAMMAR</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="s2">&quot;lalr&quot;</span><span class="p">,</span> <span class="n">transformer</span><span class="o">=</span><span class="n">AstParser</span><span class="p">(),</span> <span class="n">start</span><span class="o">=</span><span class="s2">&quot;program&quot;</span><span class="p">)</span>
+
+<span class="c1"># PUBLIC API</span>
+
+
+<div class="viewcode-block" id="parse"><a class="viewcode-back" href="../../generated/kork.html#kork.parser.parse">[docs]</a><span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ast</span><span class="o">.</span><span class="n">Program</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse the given source code into an AST.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">Program</span><span class="p">,</span> <span class="n">ast_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">source</span><span class="p">))</span></div>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Langchain AI
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, Langchain AI.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
