@@ -31,10 +31,10 @@ def _to_snake_case(name: str) -> str:
 class Expr(abc.ABC):
     """Abstract expression."""
 
-    def accept(self, visitor: Visitor) -> Any:
+    def accept(self, visitor: Visitor, **kwargs: Any) -> Any:
         """Accept implementation for a visitor."""
         return getattr(visitor, f"visit_{_to_snake_case(self.__class__.__name__)}")(
-            self
+            self, **kwargs
         )
 
 
@@ -95,10 +95,10 @@ class List_(Expr):
 class Stmt(abc.ABC):
     """Abstract statement."""
 
-    def accept(self, visitor: Visitor) -> Any:
+    def accept(self, visitor: Visitor, **kwargs: Any) -> Any:
         """Accept implementation for a visitor."""
         return getattr(visitor, f"visit_{_to_snake_case(self.__class__.__name__)}")(
-            self
+            self, **kwargs
         )
 
 

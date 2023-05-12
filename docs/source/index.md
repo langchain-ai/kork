@@ -109,6 +109,7 @@ retrievers
 :caption: Examples
 calculator
 query_analyzer
+examples/image_manipulation
 ```
 
 ```{toctree}
