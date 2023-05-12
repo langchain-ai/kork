@@ -7,7 +7,7 @@ from typing import Any, Optional, Sequence, TypedDict, Union
 
 from kork.ast_printer import AstPrinter
 from kork.chain import CodeResult
-from kork.parser import parse
+from kork.parser import parse  # type: ignore
 
 try:
     from PIL.Image import Image

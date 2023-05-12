@@ -85,7 +85,7 @@ class AstPrinter(AbstractAstPrinter):
         code.append("}")
         return "".join(signature) + "\n".join(code)
 
-    def visit_variable(self, variable: ast.Variable, **data) -> str:
+    def visit_variable(self, variable: ast.Variable, **data: Any) -> str:
         """Print a variable."""
         return variable.name
 
