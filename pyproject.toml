@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "kork"
-version = "0.0.2"
-description = "Programming with LLMs"
+version = "0.0.3"
+description = "Natural Language Interfaces Powered by LLMs"
 authors = ["LangChain"]
 license = "MIT"
 readme = "README.md"
