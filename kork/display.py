@@ -42,8 +42,6 @@ class HtmlResult(TypedDict):
 class _NoExpectedAnswer:
     """A sentinel class to indicate that there is no expected answer."""
 
-    pass
-
 
 NO_EXPECTED_ANSWER = _NoExpectedAnswer()
 
@@ -61,7 +59,12 @@ def as_html_dict(
     code = code_result["code"].strip()
 
     if pretty_print:
-        code = AstPrinter().visit(parse(code), pretty_print=True)
+        try:
+            code = AstPrinter().visit(parse(code), pretty_print=True)
+        except Exception as e:
+            # This is display code. Broad exception handling OK for now
+            # we can make the code more robust later.
+            code = code
     else:
         code = code
 
