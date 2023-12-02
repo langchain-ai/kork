@@ -68,6 +68,9 @@ extend-include = ["*.ipynb"]
 # Same as Black.
 line-length = 88
 
+[tool.ruff.extend-per-file-ignores]
+"*.ipynb" = ["E402"]
+
 [tool.mypy]
 disallow_untyped_defs = "True"
 ignore_missing_imports = "True"
