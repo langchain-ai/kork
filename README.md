@@ -2,7 +2,7 @@
 
 # Kork ![alt The Parrot](assets/parrot.png)
 
-`Kork` is an *experimental* [Langchain chain](https://python.langchain.com/en/latest/modules/chains.html) that helps build natural language APIs powered by LLMs.
+`Kork` is an *experimental* [Langchain chain](https://python.langchain.com/docs/modules/chains) that helps build natural language APIs powered by LLMs.
 
 ## Features
 
