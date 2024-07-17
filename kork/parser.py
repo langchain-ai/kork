@@ -17,7 +17,7 @@ from lark import Lark, Transformer, v_args
 
 from kork import ast
 
-GRAMMAR = """
+GRAMMAR = r"""
     program: statement+
 
     statement: function_decl
