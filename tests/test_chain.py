@@ -18,7 +18,7 @@ def test_code_chain() -> None:
         example_retriever=example_retriever,
     )
 
-    response = chain(inputs={"query": "blah"})
+    response = chain.invoke({"query": "blah"})
     # Why does the chain return a `query` key?
     assert sorted(response) == ["code", "environment", "errors", "query", "raw"]
     env = response.pop("environment")
@@ -43,7 +43,7 @@ def test_bad_program() -> None:
         example_retriever=example_retriever,
     )
 
-    response = chain(inputs={"query": "blah"})
+    response = chain.invoke({"query": "blah"})
     # Why does the chain return a `query` key?
     assert sorted(response) == ["code", "environment", "errors", "query", "raw"]
     assert response["raw"] == "<code>\nINVALID PROGRAM\n</code>"
@@ -67,7 +67,7 @@ def test_llm_output_missing_program() -> None:
         example_retriever=example_retriever,
     )
 
-    response = chain(inputs={"query": "blah"})
+    response = chain.invoke({"query": "blah"})
     # Why does the chain return a `query` key?
     assert sorted(response) == ["code", "environment", "errors", "query", "raw"]
     assert response["raw"] == "oops."
@@ -82,7 +82,7 @@ def test_from_defaults_instantiation() -> None:
     """Test from default instantiation."""
     llm = ToyChatModel(response="<code>\nvar x = 1;\n</code>")
     chain = CodeChain.from_defaults(llm=llm)
-    response = chain(inputs={"query": "blah"})
+    response = chain.invoke({"query": "blah"})
     # Why does the chain return a `query` key?
     assert sorted(response) == ["code", "environment", "errors", "query", "raw"]
     assert response["environment"].get_symbol("x") == 1

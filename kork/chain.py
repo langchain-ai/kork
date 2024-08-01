@@ -15,15 +15,13 @@ from typing import (
     cast,
 )
 
-from langchain import LLMChain
 from langchain.chains.base import Chain
-from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 
 try:
     from langchain.base_language import BaseLanguageModel
 except ImportError:
     from langchain.schema import BaseLanguageModel
-from pydantic import Extra
 
 from kork import ast
 from kork.ast_printer import AbstractAstPrinter, AstPrinter
@@ -128,7 +126,7 @@ class CodeChain(Chain):
     class Config:
         """Configuration for this pydantic object."""
 
-        extra = Extra.allow
+        extra = "allow"
         arbitrary_types_allowed = True
 
     @property
@@ -226,14 +224,14 @@ class CodeChain(Chain):
 
         environment, few_shot_template = self.prepare_context(query, variables)
 
-        chain = LLMChain(
-            prompt=few_shot_template,
-            llm=self.llm,
-        )
+        chain = few_shot_template | self.llm
 
         formatted_query = format_text(query, self.input_formatter)
-        llm_output = cast(str, chain.predict_and_parse(query=formatted_query))
-        code = unwrap_tag("code", llm_output)
+        llm_output = chain.invoke({"query": formatted_query})
+
+        # Extract content from AIMessage
+        llm_output_content = llm_output.content
+        code = unwrap_tag("code", llm_output_content)
 
         if not code:
             return {
@@ -243,7 +241,7 @@ class CodeChain(Chain):
                         "is wrapped in a code block."
                     )
                 ],
-                "raw": llm_output,
+                "raw": llm_output_content,
                 "code": "",
                 "environment": None,
             }
@@ -253,14 +251,14 @@ class CodeChain(Chain):
         if interpreter_result["errors"]:
             return {
                 "errors": interpreter_result["errors"],
-                "raw": llm_output,
+                "raw": llm_output_content,
                 "code": code,
                 "environment": None,
             }
 
         return {
             "errors": [],
-            "raw": llm_output,
+            "raw": llm_output_content,
             "code": code,
             "environment": interpreter_result["environment"],
         }

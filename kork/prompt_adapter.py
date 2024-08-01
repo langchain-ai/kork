@@ -7,9 +7,8 @@ The prompt adapter supports breaking the prompt into:
 """
 from typing import Any, Callable, List, Sequence, Tuple
 
-from langchain import BasePromptTemplate, PromptTemplate
 from langchain.schema import BaseMessage, HumanMessage, PromptValue, SystemMessage
-from pydantic import Extra
+from langchain_core.prompts import BasePromptTemplate, PromptTemplate
 
 
 class FewShotPromptValue(PromptValue):
@@ -21,7 +20,7 @@ class FewShotPromptValue(PromptValue):
     class Config:
         """Configuration for this pydantic object."""
 
-        extra = Extra.forbid
+        extra = "forbid"
         arbitrary_types_allowed = True
 
     def to_string(self) -> str:
