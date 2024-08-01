@@ -1,5 +1,14 @@
 [![Unit Tests](https://github.com/langchain-ai/kork/actions/workflows/test.yml/badge.svg?branch=main&event=push)](https://github.com/langchain-ai/kork/actions/workflows/test.yml)
 
+
+# NOT MAINTAINED
+
+`Kork` was a prototype for agents that can take multiple (dependent) actions at once; i.e., when the input of action 2 depends on the output from action 1.
+
+This is distinct from parallel tool use where the inputs into the tools are independent of the tools outputs.
+
+We're currently not maintaining Kork, but you're welcome to use it for your own research.
+
 # Kork ![alt The Parrot](assets/parrot.png)
 
 `Kork` is an *experimental* [Langchain chain](https://python.langchain.com/en/latest/modules/chains.html) that helps build natural language APIs powered by LLMs.
